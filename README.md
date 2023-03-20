@@ -9,6 +9,7 @@ npm i knn3-sdk
     2. 如果还有下一页数据，会返回cursor,请求下一页数据时请带上cursor。             
     3. 所有的函数都添加了单元测试，具体使用方法可以参考单元测试写法   
     4. 可选参数如果当中的有空的，请填写undefined  
+    5. 具体的参数结构和返回值model可参考ts的定义
 
 ## Address   
 该类接口主要获取钱包地址及该地址的一些相关信息
@@ -101,6 +102,31 @@ let result = await holdTokens(
     )
 ```
 
+8. 获取地址绑定的.bit
+请求参数:       
+    * address: 钱包地址(必选)     
+    * limit: 每次列表的条数，最大50(可选)
+    * cursor: 下个游标开始的地址(可选)  
+
+```js
+import { boundBits } from 'knn3-sdk';
+const result = await boundBits(
+      '0x790116d0685eb197b886dacad9c247f785987a4a'
+    )
+```
+
+8. 获取地址绑定的spaceId
+请求参数:       
+    * address: 钱包地址(必选)     
+    * limit: 每次列表的条数，最大50(可选)
+    * cursor: 下个游标开始的地址(可选)  
+
+```js
+import { boundSpaceIds } from 'knn3-sdk';
+const result = await boundSpaceIds(
+      '0x790116d0685eb197b886dacad9c247f785987a4a'
+    )
+```
 
 
 ### Event       
@@ -279,6 +305,7 @@ const result = await getAddrByToken(
 ``` 
 
 ### Lens
+该类接口主要获取Lens相关的信息
 1. 获取lens profile列表     
     * handle: lens的handle(可选) 
     * profileId: lens的profileId(可选) 
@@ -309,4 +336,33 @@ const result = await getLensFollowers(104724)
 ```js
 import { getLensPublications } from 'knn3-sdk'; 
 result = await getLensPublications(104724, undefined, 'Mirror', 1, 1161695)
+```
+
+### bit 
+该类接口主要获取.bit相关的信息
+1. 获取.bit的列表
+    * account: bit的账户(可选) 
+    * addr: 地址(可选)
+    * limit: 每次列表的条数，最大50(可选)
+    * cursor: 下个游标开始的地址(可选)      
+
+```js
+import { getBitList } from 'knn3-sdk'; 
+const result = await getBitList(
+      undefined,
+      '0xeab07120cdecc4a4ffaeddccd8cc508cd42702a1'
+    )
+```
+
+### spaceId 
+该类接口主要获取spaceId相关的信息
+1. 获取spaceId的列表
+    * spaceId: spaceId域名(可选) 
+    * addr: 地址(可选)
+    * limit: 每次列表的条数，最大50(可选)
+    * cursor: 下个游标开始的地址(可选)      
+
+```js
+import { getSpaceIdList } from 'knn3-sdk'; 
+const result = await getSpaceIdList(undefined, undefined, 10, '¥1000.bnb')
 ```

@@ -7,6 +7,8 @@ import {
   holdNfts,
   holdTokens,
   boundLens,
+  boundBits,
+  boundSpaceIds,
 } from '../src/index'
 
 describe('test addr.ts', () => {
@@ -56,6 +58,20 @@ describe('test addr.ts', () => {
 
   it('should return address bound lens', async () => {
     let result = await boundLens('0x88520C10ad3d35aD2D3220CdE446CcB33f09331B')
+    expect(result.list.length).toBe(1)
+  })
+
+  it('should return address bound bits', async () => {
+    let result = await boundBits('0x88520C10ad3d35aD2D3220CdE446CcB33f09331B')
+    expect(result.list.length).toBe(0)
+    result = await boundBits('0x99c082443a66701a3a66d8dedc507505ae4e13a2')
+    expect(result.list.length).toBe(1)
+  })
+
+  it('should return address bound spaceIds', async () => {
+    let result = await boundSpaceIds(
+      '0x88520C10ad3d35aD2D3220CdE446CcB33f09331B'
+    )
     expect(result.list.length).toBe(1)
   })
 

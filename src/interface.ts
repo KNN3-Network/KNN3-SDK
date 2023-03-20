@@ -4,6 +4,19 @@ export interface IAddress {
   name: string
 }
 
+export interface IBit {
+  addr: string
+  account: string
+  algorithmId: number
+  chain: string
+  outpoint: string
+}
+
+export interface ISpaceId {
+  name: string
+  address: string
+}
+
 export interface INft {
   contract: string
   description: string
@@ -74,6 +87,11 @@ export interface INftList {
   cursor: string | null
 }
 
+export interface ISpaceIdList {
+  list: ISpaceId[]
+  cursor: string | null
+}
+
 export interface ITokenList {
   list: IToken[]
   cursor: string | null
@@ -94,6 +112,11 @@ export interface ITwitterList {
   cursor: string | null
 }
 
+export interface IBitList {
+  list: IBit[]
+  cursor: string | null
+}
+
 export interface IAddrAttendEventsList {
   list: IEvent[]
   cursor: string | null
@@ -106,6 +129,11 @@ export interface IBoundTwitters {
 
 export interface IBoundAvatars {
   list: IAvatar[]
+  cursor: string | null
+}
+
+export interface IBoundSpaceIds {
+  list: ISpaceId[]
   cursor: string | null
 }
 

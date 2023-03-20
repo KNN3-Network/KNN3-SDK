@@ -2,8 +2,10 @@ import {
   IAddrAttendEventsList,
   IAddress,
   IAddrList,
+  IBitList,
   IBoundAvatars,
   IBoundLens,
+  IBoundSpaceIds,
   IBoundTwitters,
   INftHoldList,
   ITokenHoldList,
@@ -132,6 +134,40 @@ export const boundLens = async (
   if (limit && limit > 50) limit = 50
   return (
     await instance.get(`addresses/boundLens`, {
+      params: {
+        address: address.toLocaleLowerCase(),
+        limit,
+        cursor,
+      },
+    })
+  ).data
+}
+
+export const boundBits = async (
+  address: string,
+  limit?: number,
+  cursor?: string
+): Promise<IBitList> => {
+  if (limit && limit > 50) limit = 50
+  return (
+    await instance.get(`addresses/boundBits`, {
+      params: {
+        address: address.toLocaleLowerCase(),
+        limit,
+        cursor,
+      },
+    })
+  ).data
+}
+
+export const boundSpaceIds = async (
+  address: string,
+  limit?: number,
+  cursor?: string
+): Promise<IBoundSpaceIds> => {
+  if (limit && limit > 50) limit = 50
+  return (
+    await instance.get(`addresses/boundSpaceIds`, {
       params: {
         address: address.toLocaleLowerCase(),
         limit,
