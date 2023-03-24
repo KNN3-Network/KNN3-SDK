@@ -1,5 +1,7 @@
 # KNN3-SDK
 
+[Chinese](https://github.com/KNN3-Network/Graphx-SDK/blob/main/README.md) | [English](https://github.com/KNN3-Network/Graphx-SDK/blob/main/KNN3-SDK_EN.md)
+
 ## Install
 
 ```js
@@ -14,6 +16,11 @@ npm i knn3-sdk
 3. All functions have been added with unit tests. For specific usage, please refer to the unit test implementation.
 4. For optional parameters, if there are any empty fields, please fill in with 'undefined'.
 5. Refer to the TypeScript definitions for specific parameter structures and return value models.
+```
+
+```js
+import { setAuthKey } from 'knn3-sdk'
+setAuthKey('knn3-common-AswT-mcYf')
 ```
 
 ## Address

@@ -1,6 +1,6 @@
 # KNN3-SDK
 
-[中文](https://github.com/KNN3-Network/Graphx-SDK/blob/main/README.md) | [English](https://github.com/KNN3-Network/Graphx-SDK/blob/main/KNN3-SDK_EN.md)
+[中文](https://github.com/KNN3-Network/Graphx-SDK/blob/main/README.md) | [英文](https://github.com/KNN3-Network/Graphx-SDK/blob/main/KNN3-SDK_EN.md)
 
 ## Install      
 ```
