@@ -15,10 +15,10 @@ npm i knn3-sdk
     5. 具体的参数结构和返回值model可参考ts的定义    
     6. sdk需要申请密钥并设置才能提高访问频率限制(默认为120次/每分钟)，设置密钥方法如下      
 
-    ```js
-    import { setAuthKey } from 'knn3-sdk'
-    setAuthKey('knn3-common-AswT-mcYf')
-    ```
+```js
+import { setAuthKey } from 'knn3-sdk'
+setAuthKey('knn3-common-AswT-mcYf')
+```
 
 ## Address   
 该类接口主要获取钱包地址及该地址的一些相关信息
