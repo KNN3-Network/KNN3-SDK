@@ -1,4 +1,7 @@
 # KNN3-SDK
+
+[中文](https://github.com/KNN3-Network/Graphx-SDK/blob/main/README.md) | [English](https://github.com/KNN3-Network/Graphx-SDK/blob/main/KNN3-SDK_EN.md)
+
 ## Install      
 ```
 npm i knn3-sdk
@@ -9,7 +12,13 @@ npm i knn3-sdk
     2. 如果还有下一页数据，会返回cursor,请求下一页数据时请带上cursor。             
     3. 所有的函数都添加了单元测试，具体使用方法可以参考单元测试写法   
     4. 可选参数如果当中的有空的，请填写undefined  
-    5. 具体的参数结构和返回值model可参考ts的定义
+    5. 具体的参数结构和返回值model可参考ts的定义    
+    6. sdk需要申请密钥并设置才能提高访问频率限制(默认为120次/每分钟)，设置密钥方法如下      
+
+    ```js
+    import { setAuthKey } from 'knn3-sdk'
+    setAuthKey('knn3-common-AswT-mcYf')
+    ```
 
 ## Address   
 该类接口主要获取钱包地址及该地址的一些相关信息
