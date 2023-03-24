@@ -9,9 +9,13 @@ import {
   boundLens,
   boundBits,
   boundSpaceIds,
+  setAuthKey,
 } from '../src/index'
 
 describe('test addr.ts', () => {
+  beforeAll(() => {
+    setAuthKey('knn3-common-AswT-mcYf')
+  })
   it('should return correct address', async () => {
     let addr
     try {

@@ -1,6 +1,9 @@
-import { getTokenList, getAddrByToken } from '../src/index'
+import { getTokenList, getAddrByToken, setAuthKey } from '../src/index'
 
 describe('test token.ts', () => {
+  beforeAll(() => {
+    setAuthKey('knn3-common-AswT-mcYf')
+  })
   it('should return token list', async () => {
     let result = await getTokenList()
     expect(result.list.length).toBe(30)

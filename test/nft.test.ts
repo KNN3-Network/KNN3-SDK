@@ -1,6 +1,9 @@
-import { getNftList, getAddrByNft } from '../src/index'
+import { getNftList, getAddrByNft, setAuthKey } from '../src/index'
 
 describe('test nft.ts', () => {
+  beforeAll(() => {
+    setAuthKey('knn3-common-AswT-mcYf')
+  })
   it('should return nft list', async () => {
     let result = await getNftList()
     expect(result.list.length).toBe(30)

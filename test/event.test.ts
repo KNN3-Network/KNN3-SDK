@@ -1,6 +1,9 @@
-import { getEvent, getEventList, getEventAddr } from '../src/index'
+import { getEvent, getEventList, getEventAddr, setAuthKey } from '../src/index'
 
 describe('test event.ts', () => {
+  beforeAll(() => {
+    setAuthKey('knn3-common-AswT-mcYf')
+  })
   it('should return correct event', async () => {
     let event
     try {

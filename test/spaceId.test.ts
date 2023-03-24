@@ -1,6 +1,9 @@
-import { getSpaceIdList } from '../src/index'
+import { getSpaceIdList, setAuthKey } from '../src/index'
 
 describe('test spaceId.ts', () => {
+  beforeAll(() => {
+    setAuthKey('knn3-common-AswT-mcYf')
+  })
   it('should return spaceId list', async () => {
     let result = await getSpaceIdList()
     expect(result.list.length).toBe(30)

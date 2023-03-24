@@ -1,6 +1,9 @@
-import { getBitList } from '../src/index'
+import { getBitList, setAuthKey } from '../src/index'
 
 describe('test bit.ts', () => {
+  beforeAll(() => {
+    setAuthKey('knn3-common-AswT-mcYf')
+  })
   it('should return bit list', async () => {
     let result = await getBitList()
     expect(result.list.length).toBe(30)

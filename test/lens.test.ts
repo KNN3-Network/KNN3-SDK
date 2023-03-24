@@ -2,9 +2,13 @@ import {
   getLensFollowers,
   getLensList,
   getLensPublications,
+  setAuthKey,
 } from '../src/index'
 
 describe('test lens.ts', () => {
+  beforeAll(() => {
+    setAuthKey('knn3-common-AswT-mcYf')
+  })
   it('should return correct lens', async () => {
     let result = await getLensList('shadow88sky.lens')
     expect(result.list[0].profileId).toBe(104724)

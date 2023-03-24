@@ -2,9 +2,13 @@ import {
   getAvatarBindAddr,
   getAvatarBindTwitter,
   getAvatarList,
+  setAuthKey,
 } from '../src/index'
 
 describe('test avatar.ts', () => {
+  beforeAll(() => {
+    setAuthKey('knn3-common-AswT-mcYf')
+  })
   it('should return avatar list', async () => {
     let result = await getAvatarList(
       '0x0200c6fed045084ae0185b6cf290b60f42fd5769aa94b3c2e67a68cf2cf2847bde'

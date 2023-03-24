@@ -2,9 +2,13 @@ import {
   getTwitterList,
   getTwitterIncludeAddr,
   getTwitterBondAvatar,
+  setAuthKey,
 } from '../src/index'
 
 describe('test twitter.ts', () => {
+  beforeAll(() => {
+    setAuthKey('knn3-common-AswT-mcYf')
+  })
   it('should return twitter list', async () => {
     const result = await getTwitterList('chen')
     expect(result.list.length).toBeGreaterThan(2)
