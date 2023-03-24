@@ -16,6 +16,7 @@ npm i knn3-sdk
 3. All functions have been added with unit tests. For specific usage, please refer to the unit test implementation.
 4. For optional parameters, if there are any empty fields, please fill in with 'undefined'.
 5. Refer to the TypeScript definitions for specific parameter structures and return value models.
+6. To increase the access frequency limit (default is 120 times per minute), the SDK needs to apply for and set a key. The method for setting a key is as follows:
 ```
 
 ```js
