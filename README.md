@@ -1,12 +1,15 @@
 # KNN3-SDK
 
+[English](https://github.com/KNN3-Network/Graphx-SDK/blob/main/KNN3-SDK_EN.md) | [中文](https://github.com/KNN3-Network/Graphx-SDK/blob/main/README.md)
+
+
 KNN3-SDK是一个开发者可以与KNN3 GraphX API直接交互的JavaScript SDK，在这个SDK里可以获得一下用户身份、行为凭证和关系数据。
 
 ## 内容目录
 
-[安装](#安装)
+[#安装](#安装)
 
-[数据](#address)
+[#数据](#address)
   - [Address](#address)
   - [Event](#event)
   - [Twitter](#twitter)
