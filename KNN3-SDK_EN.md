@@ -1,6 +1,26 @@
 # KNN3-SDK
 
-[Chinese](https://github.com/KNN3-Network/Graphx-SDK/blob/main/README.md) | [English](https://github.com/KNN3-Network/Graphx-SDK/blob/main/KNN3-SDK_EN.md)
+[English](https://github.com/KNN3-Network/Graphx-SDK/blob/main/KNN3-SDK_EN.md) | [中文](https://github.com/KNN3-Network/Graphx-SDK/blob/main/README.md)
+
+KNN3-SDK is a JavaScript SDK with which developers can directly interact with KNN3 GraphX API. In this SDK, user identity, behavior credentials and relationship data can be obtained.
+
+## Content
+
+[#Install](#Install)
+
+[#Apply for API Key](#Apply for API Key)
+
+[#Data](#address)
+  - [Address](#address)
+  - [Event](#event)
+  - [Twitter](#twitter)
+  - [Avatar](#avatar)
+  - [NFT](#nft)
+  - [Token](#token)
+  - [Lens](#lens)
+  - [bit](#bit)
+  - [spaceId](#spaceid)
+- [License](#license)
 
 ## Install
 
@@ -16,14 +36,22 @@ npm i knn3-sdk
 3. All functions have been added with unit tests. For specific usage, please refer to the unit test implementation.
 4. For optional parameters, if there are any empty fields, please fill in with 'undefined'.
 5. Refer to the TypeScript definitions for specific parameter structures and return value models.
-6. To increase the access frequency limit (default is 120 times per minute), the SDK needs to apply for and set a key. The method for setting a key is as follows:
+6. To increase the access frequency limit (default is 10 times per minute), the SDK needs to apply for and set a key. The method for setting a key is as follows:
 ```
 
 ```js
 import { setAuthKey } from 'knn3-sdk'
-setAuthKey('knn3-common-AswT-mcYf')
+setAuthKey('your-api-key')
 ```
 
+## Apply for API Key
+You can choose any of the following methods to apply for an API key：
+1. Contact us：builder@knn3.xyz
+2. Apply from [Transformer](https://transformer.knn3.xyz/) platform (to be released officially)
+   1. Connect wallet and bind email
+   2. Go to Create API Key page, enter API Key purpose
+   3. Copy API Key, configure through "setAuthKey" method
+   
 ## Address
 
 This category of interfaces mainly retrieves wallet addresses and some related information.
