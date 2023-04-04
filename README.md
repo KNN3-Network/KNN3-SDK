@@ -1,13 +1,14 @@
 # KNN3-SDK
 
-[English](https://github.com/KNN3-Network/Graphx-SDK/blob/main/KNN3-SDK_EN.md) | [中文](https://github.com/KNN3-Network/Graphx-SDK/blob/main/README.md)
-
+[中文](https://github.com/KNN3-Network/Graphx-SDK/blob/main/README.md) | [English](https://github.com/KNN3-Network/Graphx-SDK/blob/main/KNN3-SDK_EN.md)
 
 KNN3-SDK是一个开发者可以与KNN3 GraphX API直接交互的JavaScript SDK，在这个SDK里可以获得一下用户身份、行为凭证和关系数据。
 
 ## 内容目录
 
 [#安装](#安装)
+
+[#申请密钥](#申请密钥)
 
 [#数据](#address)
   - [Address](#address)
@@ -32,12 +33,20 @@ npm i knn3-sdk
     3. 所有的函数都添加了单元测试，具体使用方法可以参考单元测试写法   
     4. 可选参数如果当中的有空的，请填写undefined  
     5. 具体的参数结构和返回值model可参考ts的定义    
-    6. sdk需要申请密钥并设置才能提高访问频率限制(默认为120次/每分钟)，设置密钥方法如下      
+    6. sdk需要申请密钥并设置才能提高访问频率限制(默认为10次/每分钟)，设置密钥方法如下      
 
 ```js
 import { setAuthKey } from 'knn3-sdk'
-setAuthKey('knn3-common-AswT-mcYf')
+setAuthKey('your-api-key')
 ```
+
+## 申请密钥
+您可以选择以下任意一种方式申请密钥：
+1. 联系我们：builder@knn3.xyz
+2. 通过[Transformer](https://transformer.knn3.xyz/)平台申请(待正式发布)
+   1. 连接钱包，并绑定邮箱
+   2. 进入创建API Key界面创建，需要输入API Key用途
+   3. 复制API Key，通过"setAuthKey"方法配置
 
 ## Address   
 该类接口主要获取钱包地址及该地址的一些相关信息
