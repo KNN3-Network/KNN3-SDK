@@ -152,7 +152,7 @@ const result = await boundBits(
     )
 ```
 
-8. 获取地址绑定的spaceId
+9. 获取地址绑定的spaceId
 请求参数:       
     * address: 钱包地址(必选)     
     * limit: 每次列表的条数，最大50(可选)
@@ -163,6 +163,16 @@ import { boundSpaceIds } from 'knn3-sdk';
 const result = await boundSpaceIds(
       '0x790116d0685eb197b886dacad9c247f785987a4a'
     )
+```
+
+10. 获取地址的投票数据(snapshot)
+请求参数:       
+    * address: 钱包地址(必选)     
+    * limit: 每次列表的条数，最大50(可选)
+    * cursor: 下个游标开始的地址(可选)
+```js
+import { votes } from 'knn3-sdk';
+const vote = await votes('0x724f321c4efed5e3c7cca40168610c258c82d02f')
 ```
 
 

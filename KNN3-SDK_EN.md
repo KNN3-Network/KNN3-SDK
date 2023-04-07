@@ -207,6 +207,18 @@ const result = await boundSpaceIds(
     )
 ```
 
+10. Get address votes(snapshot)
+   Request parameters:
+
+   - address: Wallet address (required)
+
+   - limit: Number of items per list, maximum 50 (optional)
+   - cursor: Address where the next cursor starts (optional)
+```js
+import { votes } from 'knn3-sdk';
+const vote = await votes('0x724f321c4efed5e3c7cca40168610c258c82d02f')
+```
+
 ### Event
 
 This category of interfaces is mainly for obtaining POAP events.
