@@ -10,6 +10,7 @@ import {
   boundBits,
   boundSpaceIds,
   setAuthKey,
+  votes,
 } from '../src/index'
 
 describe('test addr.ts', () => {
@@ -25,6 +26,13 @@ describe('test addr.ts', () => {
     }
     addr = await getAddr('0x88520C10ad3d35aD2D3220CdE446CcB33f09331B')
     expect(addr.name).toBe('shadow88sky')
+  })
+
+  it('should return votes', async () => {
+    const vote = await votes('0x724f321c4efed5e3c7cca40168610c258c82d02f')
+    expect(vote.list[0].address).toBe(
+      '0x724f321c4efed5e3c7cca40168610c258c82d02f'
+    )
   })
 
   it('should return address list', async () => {

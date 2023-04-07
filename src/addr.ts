@@ -9,6 +9,7 @@ import {
   IBoundTwitters,
   INftHoldList,
   ITokenHoldList,
+  IVotes,
 } from './interface'
 import { instance } from './request'
 
@@ -79,6 +80,23 @@ export const boundAvatars = async (
   if (limit && limit > 50) limit = 50
   return (
     await instance.get(`addresses/boundAvatars`, {
+      params: {
+        address: address.toLocaleLowerCase(),
+        limit,
+        cursor,
+      },
+    })
+  ).data
+}
+
+export const votes = async (
+  address: string,
+  limit?: number,
+  cursor?: string
+): Promise<IVotes> => {
+  if (limit && limit > 50) limit = 50
+  return (
+    await instance.get(`addresses/votes`, {
       params: {
         address: address.toLocaleLowerCase(),
         limit,

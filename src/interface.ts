@@ -12,6 +12,12 @@ export interface IBit {
   outpoint: string
 }
 
+export interface IVote {
+  address: string
+  spaceId: string
+  count: number
+}
+
 export interface ISpaceId {
   name: string
   address: string
@@ -129,6 +135,11 @@ export interface IBoundTwitters {
 
 export interface IBoundAvatars {
   list: IAvatar[]
+  cursor: string | null
+}
+
+export interface IVotes {
+  list: IVote[]
   cursor: string | null
 }
 
