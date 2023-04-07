@@ -8,7 +8,7 @@ KNN3-SDK is a JavaScript SDK with which developers can directly interact with KN
 
 [#Install](#Install)
 
-[#Apply for API Key](#Apply for API Key)
+[#Apply for API Key](#apply-for-api-key)
 
 [#Data](#address)
   - [Address](#address)
