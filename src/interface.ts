@@ -1,7 +1,7 @@
 export interface IAddress {
-  address: string
-  ens: string[]
-  name: string
+  address: string // 钱包地址
+  ens: string[] // ens数组
+  name: string // rss3里面的名字，暂时没用
 }
 
 export interface IBit {
@@ -191,4 +191,25 @@ export interface INftHoldList {
 export interface ILensList {
   list: ILens[]
   cursor: string | null
+}
+
+export interface ILensRate {
+  profileId: string
+  address: string
+  influ_level: number
+  influ_level_str: string
+  campaign_level: number
+  campaign_level_str: string
+  engager_level: number
+  engager_level_str: string
+  creator_level: number
+  creator_level_str: string
+  collector_level: number
+  collector_level_str: string
+  curator_level: number
+  curator_level_str: string
+  overall_level_score: number
+  overall_level_rank: number
+  overall_level: number
+  overall_level_str: string
 }

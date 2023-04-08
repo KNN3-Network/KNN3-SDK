@@ -1,4 +1,4 @@
-import { IAddrList } from './interface'
+import { IAddrList, ILensRate } from './interface'
 import { instance } from './request'
 
 export const getLensList = async (
@@ -55,4 +55,8 @@ export const getLensPublications = async (
       },
     })
   ).data
+}
+
+export const getLensRate = async (profileId: number): Promise<ILensRate> => {
+  return (await instance.get(`/lens/level/${profileId}`)).data
 }

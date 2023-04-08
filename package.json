@@ -1,6 +1,6 @@
 {
   "name": "knn3-sdk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -14,7 +14,7 @@
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build",
-    "test": "jest --coverage --maxWorkers 2"
+    "test": "jest --testTimeout 100000 --coverage --maxWorkers 2"
   },
   "author": "KNN3 Team",
   "license": "ISC",

@@ -483,6 +483,15 @@ import { getLensPublications } from 'knn3-sdk';
 result = await getLensPublications(104724, undefined, 'Mirror', 1, 1161695)
 ```
 
+4. Get Rate    
+
+    - profileId: Lens profile ID(required)   
+    
+```js
+import { getLensRate } from 'knn3-sdk'; 
+result = await getLensRate(5)
+```
+
 ### bit
 
 This category of interfaces is mainly for obtaining .bit related information.

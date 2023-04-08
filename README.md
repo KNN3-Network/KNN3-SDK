@@ -385,6 +385,13 @@ import { getLensPublications } from 'knn3-sdk';
 result = await getLensPublications(104724, undefined, 'Mirror', 1, 1161695)
 ```
 
+4. 获取lens的评级分数
+    * profileId: lens的profileId(必选) 
+```js
+import { getLensRate } from 'knn3-sdk'; 
+result = await getLensRate(5)
+```
+
 ### bit 
 该类接口主要获取.bit相关的信息
 1. 获取.bit的列表

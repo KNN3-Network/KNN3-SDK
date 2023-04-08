@@ -3,6 +3,7 @@ import {
   getLensList,
   getLensPublications,
   setAuthKey,
+  getLensRate,
 } from '../src/index'
 
 describe('test lens.ts', () => {
@@ -14,7 +15,7 @@ describe('test lens.ts', () => {
     expect(result.list[0].profileId).toBe(104724)
     result = await getLensList(undefined, undefined, 10, '11')
     expect(result.list[0].profileId).toBe(11)
-  })
+  }, 50000)
 
   it('should return correct lens followers', async () => {
     const result = await getLensFollowers(104724)
@@ -26,5 +27,10 @@ describe('test lens.ts', () => {
     expect(result.list.length).toBe(30)
     result = await getLensPublications(104724, undefined, 'Mirror', 1, 1161695)
     expect(result.list[0].id).toBe(1161695)
-  })
+  }, 50000)
+
+  it('should return correct lens rate', async () => {
+    let result = await getLensRate(5)
+    expect(result.profileId).toBe('5')
+  }, 50000)
 })
