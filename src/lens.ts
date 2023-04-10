@@ -1,4 +1,4 @@
-import { IAddrList, ILensRate } from './interface'
+import { IAddrList, IBoundLens, ILensRate } from './interface'
 import { instance } from './request'
 
 export const getLensList = async (
@@ -6,7 +6,7 @@ export const getLensList = async (
   profileId?: string,
   limit?: number,
   cursor?: string
-) => {
+): Promise<IBoundLens> => {
   if (limit && limit > 50) limit = 50
   return (
     await instance.get(`lens`, {
