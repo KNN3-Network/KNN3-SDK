@@ -30,14 +30,12 @@ npm i knn3-sdk
 
 ## Description
 
-```
 1. For performance reasons, all list interfaces have a maximum data limit of 50 per request (if the limit is exceeded, only 50 data entries will be returned).
 2. If there is more data on the next page, a cursor will be returned. Please include the cursor when requesting the next page of data.
 3. All functions have been added with unit tests. For specific usage, please refer to the unit test implementation.
 4. For optional parameters, if there are any empty fields, please fill in with 'undefined'.
 5. Refer to the TypeScript definitions for specific parameter structures and return value models.
 6. To increase the access frequency limit (default is 10 times per minute), the SDK needs to apply for and set a key. The method for setting a key is as follows:
-```
 
 ```js
 import { setAuthKey } from 'knn3-sdk'
