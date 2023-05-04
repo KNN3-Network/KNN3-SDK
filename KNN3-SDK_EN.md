@@ -217,6 +217,18 @@ import { votes } from 'knn3-sdk';
 const vote = await votes('0x724f321c4efed5e3c7cca40168610c258c82d02f')
 ```
 
+11. Check if the address has voted for a specific proposalId
+   Request parameters:
+    - address: Wallet address (required)
+    - proposalId: proposal id (required)
+```js
+import { isVote } from 'knn3-sdk';
+const result = await isVote(
+      "0xd0b42b312684136b1323df6df8435bfd20e1c59c",
+      "0xb2195cf08464739fc51ded07d7aa5b3d290e0f6b67d8b9433a2f420119abc257"
+    );
+```
+
 ### Event
 
 This category of interfaces is mainly for obtaining POAP events.

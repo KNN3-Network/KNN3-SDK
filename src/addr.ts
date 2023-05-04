@@ -194,3 +194,18 @@ export const boundSpaceIds = async (
     })
   ).data
 }
+
+export const isVote = async (
+  address: string,
+  proposalId: string
+): Promise<boolean> => {
+  if (!address || !proposalId) throw new Error('miss address or proposalId')
+  return (
+    await instance.get(`addresses/isVoteOnProposalId`, {
+      params: {
+        address: address.toLocaleLowerCase(),
+        proposalId: proposalId.toLocaleLowerCase(),
+      },
+    })
+  ).data as boolean
+}

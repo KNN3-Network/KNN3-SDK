@@ -11,6 +11,7 @@ import {
   boundSpaceIds,
   setAuthKey,
   votes,
+  isVote,
 } from '../src/index'
 
 describe('test addr.ts', () => {
@@ -111,5 +112,13 @@ describe('test addr.ts', () => {
       'polygon'
     )
     expect(result.list.length).toBeGreaterThan(0)
+  }, 500000)
+
+  it('should return address vote', async () => {
+    let result = await isVote(
+      '0xd0b42b312684136b1323df6df8435bfd20e1c59c',
+      '0xb2195cf08464739fc51ded07d7aa5b3d290e0f6b67d8b9433a2f420119abc257'
+    )
+    expect(result).toBe(true)
   }, 500000)
 })
