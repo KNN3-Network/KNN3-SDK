@@ -4,6 +4,13 @@ export interface IAddress {
   name: string // rss3里面的名字，暂时没用
 }
 
+export interface IProposal {
+  spaceId: string
+  proposalId: string
+  proposalAuthor: string
+  proposalTitle: string
+}
+
 export interface IBit {
   addr: string
   account: string

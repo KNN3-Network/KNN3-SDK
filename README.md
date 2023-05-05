@@ -20,6 +20,7 @@ KNN3-SDK是一个开发者可以与KNN3 GraphX API直接交互的JavaScript SDK�
   - [Lens](#lens)
   - [bit](#bit)
   - [spaceId](#spaceid)
+  - [Proposal](#proposal)
 - [License](#license)
 
 ## 安装
@@ -430,4 +431,14 @@ const result = await getBitList(
 ```js
 import { getSpaceIdList } from 'knn3-sdk'; 
 const result = await getSpaceIdList(undefined, undefined, 10, '¥1000.bnb')
+```
+
+### Proposal
+该类接口主要获取Proposal的相关的信息
+1.  获取Proposal的明细
+    * proposalId: proposal id(必填)
+
+```js
+import { getProposalInfo } from 'knn3-sdk'; 
+let result = await getProposalInfo('qmudr849bdq1b7klfjstseptkcmyv65dost2ry4phbms4j')
 ```

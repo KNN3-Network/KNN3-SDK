@@ -20,6 +20,7 @@ KNN3-SDK is a JavaScript SDK with which developers can directly interact with KN
   - [Lens](#lens)
   - [bit](#bit)
   - [spaceId](#spaceid)
+  - [Proposal](#proposal)
 - [License](#license)
 
 ## Install
@@ -533,4 +534,15 @@ This category of interfaces is mainly for obtaining spaceId related information.
 ```js
 import { getSpaceIdList } from 'knn3-sdk';
 const result = await getSpaceIdList(undefined, undefined, 10, '¥1000.bnb')
+```
+
+### Proposal
+This category of interfaces is mainly for obtaining Proposal related information.
+
+1.  Get the Proposal info
+    * proposalId: proposal id(required)
+
+```js
+import { getProposalInfo } from 'knn3-sdk'; 
+let result = await getProposalInfo('qmudr849bdq1b7klfjstseptkcmyv65dost2ry4phbms4j')
 ```
