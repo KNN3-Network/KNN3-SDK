@@ -434,7 +434,7 @@ const result = await isVote(
       "0xb2195cf08464739fc51ded07d7aa5b3d290e0f6b67d8b9433a2f420119abc257"
     );
 
-// console.log(result) => true
+console.log(result) => true
 ```
 
 ### Event
