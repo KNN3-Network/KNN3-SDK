@@ -58,6 +58,15 @@ setAuthKey('your-api-key')
 import { getAddr } from 'knn3-sdk';
 
 const addr = await getAddr(address)
+
+console.log(addr);
+{
+  addr: '0x88520c10ad3d35ad2d3220cde446ccb33f09331b',
+  ens: [ 'shadow88sky.eth' ],
+  name: 'shadow88sky',
+  github: 'shadow88sky',
+  email: '119136016@qq.com'
+}
 ```     
 
 2. 获取地址列表     
@@ -68,7 +77,35 @@ const addr = await getAddr(address)
 ```js
 import { getAddrList } from 'knn3-sdk';
 
-const result = await getAddrList()
+const result = await getAddrList(undefined, 3)
+
+console.log(result);
+{
+  list: [
+    {
+      addr: '0x0000000000000000000000000000000000000000',
+      ens: [Array],
+      name: null,
+      github: null,
+      email: null
+    },
+    {
+      addr: '0x0000000000000000000000000000000000000001',
+      ens: [Array],
+      name: null,
+      github: null,
+      email: null
+    },
+    {
+      addr: '0x0000000000000000000000000000000000000002',
+      ens: [],
+      name: null,
+      github: null,
+      email: null
+    }
+  ],
+  cursor: '0x0000000000000000000000000000000000000003'
+}
 ```
 
 3. 获取地址参加的poap
@@ -85,7 +122,32 @@ const result = await attendEvents(
       'eth',
       2,
       'ethberlinzwei'
-    )
+)
+    
+console.log(result);
+{
+  list: [
+    {
+      addr: '0x535824c63d3421c703cb022aba55c321a6e30bf4',
+      id: '48282',
+      name: 'banklessdao @ ethprague 2022',
+      imageUrl: 'https://s3.us-west-1.amazonaws.com/knn3-static-logo/48282.png'
+    },
+    {
+      addr: '0x535824c63d3421c703cb022aba55c321a6e30bf4',
+      id: '43',
+      name: 'dappcon 2019',
+      imageUrl: 'https://s3.us-west-1.amazonaws.com/knn3-static-logo/43.png'
+    },
+    {
+      addr: '0x535824c63d3421c703cb022aba55c321a6e30bf4',
+      id: '65440',
+      name: 'ethberlin³',
+      imageUrl: 'https://s3.us-west-1.amazonaws.com/knn3-static-logo/65440.png'
+    }
+  ],
+  cursor: 'ethberlinzwei'
+}
 ```    
 
 4. 获取地址绑定的twitter
@@ -97,6 +159,18 @@ const result = await attendEvents(
 ```js
 import { boundTwitter } from 'knn3-sdk';
 const result = await boundTwitter('0x035d1fa6e5967624f0cd424892994717ea9fc2d8')
+
+console.log(result);
+{
+  list: [
+    {
+      uid: '988064388702650370',
+      handle: 'Downpink1',
+      name: 'dowpink.eth'
+    }
+  ],
+  cursor: null
+}
 ```
 
 5. 获取地址绑定的avatar
@@ -109,7 +183,36 @@ const result = await boundTwitter('0x035d1fa6e5967624f0cd424892994717ea9fc2d8')
 import { boundAvatars } from 'knn3-sdk';
 const result = await boundAvatars(
       '0x790116d0685eb197b886dacad9c247f785987a4a'
-    )
+)
+console.log(result);
+{
+  list: [
+    {
+      id: 15702,
+      avatar: '0x02054a2cf487cb3687e12b3ec3d6e7f76bd5425f0b0ad6f32680aa615dba583397',
+      platform: 'ethereum',
+      identity: '0x790116d0685eb197b886dacad9c247f785987a4a',
+      created_at: '2022-12-16T10:23:47.466Z',
+      updated_at: '2022-12-16T10:23:47.466Z'
+    },
+    {
+      id: 16411,
+      avatar: '0x020b270392f312de39155b2f7a59f89c8ccf9ab27917a7e253faff646a52778462',
+      platform: 'ethereum',
+      identity: '0x790116d0685eb197b886dacad9c247f785987a4a',
+      created_at: '2023-01-10T07:06:42.921Z',
+      updated_at: '2023-01-10T07:06:42.921Z'
+    },
+    {
+      id: 8332,
+      avatar: '0x020ca0242ff7c3aac99ac9ed263c196850fc14eee094302f72679231afe5435cf4',
+      platform: 'ethereum',
+      identity: '0x790116d0685eb197b886dacad9c247f785987a4a',
+      created_at: '2022-11-15T19:36:37.276Z',
+      updated_at: '2022-11-15T19:36:37.276Z'
+    }
+  ]
+}
 ```
 
 6. 获取地址所持有的nft
@@ -123,7 +226,27 @@ import { holdNfts } from 'knn3-sdk';
 let result = await holdNfts(
       '0x88520C10ad3d35aD2D3220CdE446CcB33f09331B',
       'ethereum'
-    )
+)
+ 
+ console.log(result);
+ {
+      list: [
+        {
+          contract: '0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85',
+          description: 'Ethereum Name Service (ENS) domains are secure domain names for the decentralized world. ENS domains provide a way for users to map human readable names to blockchain and non-blockchain resources, like Ethereum addresses, IPFS hashes, or website URLs. ENS domains can be bought and sold on secondary markets.',
+          externalurl: 'https://ens.domains',
+          imageurl: 'https://i.seadn.io/gae/0cOqWoYA7xL9CkUjGlxsjreSYBdrUBE0c6EO1COG4XE8UeP-Z30ckqUNiL872zHQHQU5MUNMNhfDpyXIP17hRSC5HQ?w=500&auto=format',
+          name: '',
+          network: 'ethereum',
+          primaryInterface: 'erc_721',
+          symbol: '',
+          createat: '2023-01-11T09:48:51.662Z',
+          updateat: '2023-01-16T10:52:03.000Z',
+          count: '1'
+        }
+      ],
+      cursor: null
+    }
 ```
 
 7. 获取地址所持有的token
@@ -137,7 +260,38 @@ import { holdTokens } from 'knn3-sdk';
 let result = await holdTokens(
       '0x88520C10ad3d35aD2D3220CdE446CcB33f09331B',
       'ethereum'
-    )
+)
+  
+console.log(result);
+{
+      list: [
+        {
+          contract: '0x2d94aa3e47d9d5024503ca8491fce9a2fb4da198',
+          name: 'Bankless Token',
+          symbol: 'BANK',
+          decimal: '18',
+          network: 'ethereum',
+          count: '1.3227938609411654162376e+22'
+        },
+        {
+          contract: '0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9',
+          name: 'Aave Token',
+          symbol: 'AAVE',
+          decimal: '18',
+          network: 'ethereum',
+          count: '36471439786989313862'
+        },
+        {
+          contract: '0xc18360217d8f7ab5e7c516566761ea12ce7f9d72',
+          name: 'Ethereum Name Service',
+          symbol: 'ENS',
+          decimal: '18',
+          network: 'ethereum',
+          count: '174756310000000000000'
+        }
+      ],
+      cursor: null
+}
 ```
 
 8. 获取地址绑定的.bit
@@ -149,8 +303,22 @@ let result = await holdTokens(
 ```js
 import { boundBits } from 'knn3-sdk';
 const result = await boundBits(
-      '0x790116d0685eb197b886dacad9c247f785987a4a'
-    )
+      '0x99c082443a66701a3a66d8dedc507505ae4e13a2'
+)
+
+console.log(result);
+{
+      list: [
+        {
+          addr: '0x99c082443a66701a3a66d8dedc507505ae4e13a2',
+          account: 'cryptocaptain.bit',
+          algorithmId: 5,
+          chain: 'EVM',
+          outpoint: '0x7b3e759a0971b7a7961becc9bf487ad02038bdcc44356558d436b19f2c79456c-0'
+        }
+      ],
+      cursor: null
+}
 ```
 
 9. 获取地址绑定的spaceId
@@ -162,8 +330,19 @@ const result = await boundBits(
 ```js
 import { boundSpaceIds } from 'knn3-sdk';
 const result = await boundSpaceIds(
-      '0x790116d0685eb197b886dacad9c247f785987a4a'
+      '0x88520C10ad3d35aD2D3220CdE446CcB33f09331B'
     )
+    
+console.log(result);
+{
+      list: [
+        {
+          name: 'shadow88sky.bnb',
+          address: '0x88520c10ad3d35ad2d3220cde446ccb33f09331b'
+        }
+      ],
+      cursor: null
+}
 ```
 
 10. 获取地址的投票数据(snapshot)
@@ -174,6 +353,33 @@ const result = await boundSpaceIds(
 ```js
 import { votes } from 'knn3-sdk';
 const vote = await votes('0x724f321c4efed5e3c7cca40168610c258c82d02f')
+
+console.log(vote);
+{
+      list: [
+        {
+          address: '0x724f321c4efed5e3c7cca40168610c258c82d02f',
+          spaceId: 'balancer.eth',
+          count: 3
+        },
+        {
+          address: '0x724f321c4efed5e3c7cca40168610c258c82d02f',
+          spaceId: 'daocity.eth',
+          count: 3
+        },
+        {
+          address: '0x724f321c4efed5e3c7cca40168610c258c82d02f',
+          spaceId: 'ens.eth',
+          count: 1
+        },
+        {
+          address: '0x724f321c4efed5e3c7cca40168610c258c82d02f',
+          spaceId: 'golflinks.eth',
+          count: 3
+        }
+      ],
+      cursor: null
+}
 ```
 
 11. 判断地址是否针对某个proposalId投过票
@@ -186,6 +392,8 @@ const result = await isVote(
       "0xd0b42b312684136b1323df6df8435bfd20e1c59c",
       "0xb2195cf08464739fc51ded07d7aa5b3d290e0f6b67d8b9433a2f420119abc257"
     );
+    
+// console.log(result) => true
 ```
 
 ### Event       
