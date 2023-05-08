@@ -39,6 +39,7 @@ npm i knn3-sdk
 6. To increase the access frequency limit (default is 10 times per minute), the SDK needs to apply for and set a key. The method for setting a key is as follows:
 
 ```js
+// set apikey
 import { setAuthKey } from 'knn3-sdk'
 setAuthKey('your-api-key')
 ```
