@@ -58,10 +58,13 @@ This category of interfaces mainly retrieves wallet addresses and some related i
 1. Get wallet information by address
 
 ```js
+// request
 import { getAddr } from 'knn3-sdk';
-
 const addr = await getAddr(address)
+``` 
 
+```js
+// response
 console.log(addr);
 {
   addr: '0x88520c10ad3d35ad2d3220cde446ccb33f09331b',
@@ -83,10 +86,13 @@ console.log(addr);
    - cursor: The starting address of the next cursor (optional)
 
 ```js
+// request
 import { getAddrList } from 'knn3-sdk';
-
 const result = await getAddrList()
+``` 
 
+```js
+// response
 console.log(result);
 {
   list: [
@@ -129,15 +135,18 @@ console.log(result);
    - cursor: The starting address of the next cursor (optional)
 
 ```js
+// request
 import { attendEvents } from 'knn3-sdk';
-
 const result = await attendEvents(
       '0x535824c63d3421c703cb022aba55c321a6e30bf4',
       'eth',
       2,
       'ethberlinzwei'
-    )
+)
+``` 
 
+```js
+// response
 console.log(result);
 {
   list: [
@@ -175,9 +184,13 @@ console.log(result);
    - cursor: The starting address of the next cursor (optional)
 
 ```js
+// request
 import { boundTwitter } from 'knn3-sdk';
 const result = await boundTwitter('0x035d1fa6e5967624f0cd424892994717ea9fc2d8')
+``` 
 
+```js
+// response
 console.log(result);
 {
   list: [
@@ -202,11 +215,15 @@ console.log(result);
    - cursor: The starting address of the next cursor (optional)
 
 ```js
+// request
 import { boundAvatars } from 'knn3-sdk';
 const result = await boundAvatars(
       '0x790116d0685eb197b886dacad9c247f785987a4a'
-    )
+)
+``` 
 
+```js
+// response
 console.log(result);
 {
   list: [
@@ -251,24 +268,24 @@ console.log(result);
    - cursor: The starting address of the next cursor (optional)
 
 ```js
+// request
 import { holdNfts } from 'knn3-sdk';
 let result = await holdNfts(
       '0x88520C10ad3d35aD2D3220CdE446CcB33f09331B',
       'ethereum'
-    )
+)
+``` 
 
+```js
+// response
 console.log(result);
  {
       list: [
         {
           contract: '0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85',
-          description: 'Ethereum Name Service (ENS) domains are secure domain names
-                        for the decentralized world. ENS domains provide a way for users to map human 
-                        readable names to blockchain and non-blockchain resources, like Ethereum addresses,
-                        IPFS hashes, or website URLs. ENS domains can be bought and sold on secondary markets.',
+          description: 'Ethereum Name Service (ENS) domains are secure domain names for the decentralized world. ENS domains provide a way for users to map human readable names to blockchain and non-blockchain resources, like Ethereum addresses,IPFS hashes, or website URLs. ENS domains can be bought and sold on secondary markets.',
           externalurl: 'https://ens.domains',
-          imageurl: 'https://i.seadn.io/gae/0cOqWoYA7xL9CkUjGlxsjreSYBdrUBE0c6EO1COG4XE8UeP-Z30
-                    ckqUNiL872zHQHQU5MUNMNhfDpyXIP17hRSC5HQ?w=500&auto=format',
+          imageurl: 'https://i.seadn.io/gae/0cOqWoYA7xL9CkUjGlxsjreSYBdrUBE0c6EO1COG4XE8UeP-Z30ckqUNiL872zHQHQU5MUNMNhfDpyXIP17hRSC5HQ?w=500&auto=format',
           name: '',
           network: 'ethereum',
           primaryInterface: 'erc_721',
@@ -295,12 +312,16 @@ console.log(result);
    - cursor: Address where the next cursor starts (optional)
 
 ```js
+// request
 import { holdTokens } from 'knn3-sdk';
 let result = await holdTokens(
       '0x88520C10ad3d35aD2D3220CdE446CcB33f09331B',
       'ethereum'
-    )
+)
+``` 
 
+```js
+// response
 console.log(result);
 {
       list: [
@@ -345,11 +366,15 @@ console.log(result);
    - cursor: Address where the next cursor starts (optional)
 
 ```js
+// request
 import { boundBits } from 'knn3-sdk';
 const result = await boundBits(
       '0x790116d0685eb197b886dacad9c247f785987a4a'
-    )
+)
+``` 
 
+```js
+// response
 console.log(result);
 {
       list: [
@@ -375,11 +400,15 @@ console.log(result);
    - cursor: Address where the next cursor starts (optional)
 
 ```js
+// request
 import { boundSpaceIds } from 'knn3-sdk';
 const result = await boundSpaceIds(
       '0x790116d0685eb197b886dacad9c247f785987a4a'
-    )
-  
+)
+``` 
+
+```js
+// response  
 console.log(result);
 {
       list: [
@@ -396,13 +425,17 @@ console.log(result);
    Request parameters:
 
    - address: Wallet address (required)
-
+   
    - limit: Number of items per list, maximum 50 (optional)
    - cursor: Address where the next cursor starts (optional)
 ```js
+// request
 import { votes } from 'knn3-sdk';
 const vote = await votes('0x724f321c4efed5e3c7cca40168610c258c82d02f')
+``` 
 
+```js
+// response
 console.log(vote);
 {
       list: [
@@ -432,12 +465,14 @@ console.log(vote);
     - address: Wallet address (required)
     - proposalId: proposal id (required)
 ```js
+// request
 import { isVote } from 'knn3-sdk';
 const result = await isVote(
       "0xd0b42b312684136b1323df6df8435bfd20e1c59c",
       "0xb2195cf08464739fc51ded07d7aa5b3d290e0f6b67d8b9433a2f420119abc257"
-    );
+);
 
+// response
 console.log(result) => true
 ```
 
@@ -448,10 +483,13 @@ This category of interfaces is mainly for obtaining POAP events.
 1. Request POAP information by id
 
 ```js
+// request
 import { getEvent } from 'knn3-sdk';
-
 const event = await getEvent('1')
+``` 
 
+```js
+// response
 console.log(event);
 {
       id: '1',
@@ -473,10 +511,13 @@ console.log(event);
    - limit: Number of items per list, maximum 50 (optional)
 
 ```js
+// request
 import { getEventList } from 'knn3-sdk';
-
 const result = await getEventList('eth')
+``` 
 
+```js
+// response
 console.log(result);
 {
      list: [
@@ -514,8 +555,12 @@ console.log(result);
    * cursor: Address where the next cursor starts (optional)
 
 ```js
+// request
 const result = await getEventAddr('10203')
+``` 
 
+```js
+// response
 console.log(result);
 {
      list: [
@@ -553,10 +598,13 @@ This category of interfaces is mainly for obtaining Twitter-related binding info
    - limit: Number of items per list, maximum 50 (optional)
 
 ```js
+// request
 import { getTwitterList } from 'knn3-sdk';
-
 const result = await getTwitterList('chen')
+``` 
 
+```js
+// response
 console.log(result);
 {
      list: [
@@ -594,10 +642,13 @@ console.log(result);
    - cursor: Address where the next cursor starts (optional)
 
 ```js
+// request
 import { getTwitterIncludeAddr } from 'knn3-sdk';
-
 const result = await  getTwitterIncludeAddr('988064388702650370')
+``` 
 
+```js
+// response
 console.log(result);
 {
       list: [
@@ -624,13 +675,17 @@ This category of interfaces is mainly for obtaining Avatar-related binding infor
    - limit: Number of items per list, maximum 50 (optional)
 
 ```js
+// request
 import { getAvatarList } from 'knn3-sdk';
 await getAvatarList(
       undefined,
       3,
       '0x0200c6fed045084ae0185b6cf290b60f42fd5769aa94b3c2e67a68cf2cf2847bde'
-    )
+)
+``` 
 
+```js
+// response
 console.log(result);
 {
       list: [
@@ -675,11 +730,15 @@ console.log(result);
    - cursor: Address where the next cursor starts (optional)
 
 ```js
+// request
 import { getAvatarBindAddr } from 'knn3-sdk';
 const result = await getAvatarBindAddr(
       '0x036fd654a9601ad7db0ae5cd811bf535019e5fdf441591afc676943c73750572e6'
-    )
- 
+)
+ ``` 
+
+```js
+// response
 console.log(result);
 {
       list: [
@@ -704,11 +763,15 @@ console.log(result);
    - cursor: Address where the next cursor starts (optional)
 
 ```js
+// request
 import { getAvatarBindTwitter } from 'knn3-sdk';
- const result = await getAvatarBindTwitter(
+const result = await getAvatarBindTwitter(
       '0x036bb12a884a8ad71b35d2f6be0f6f2b97000921b0cae82a606fc56ffe685a47a5'
-    )
-    
+)
+ ``` 
+
+```js
+// response   
 console.log(result);
 {
       list: [
@@ -733,25 +796,24 @@ This category of interfaces is mainly for obtaining NFT-related information (cur
    - cursor: Address where the next cursor starts (optional)
 
 ```js
+// request
 import { getNftList } from 'knn3-sdk';
 const result = await getNftList(
       undefined,
       undefined,
       5,
       '0x000000777697bdb425a417495743088dc664b10b'
-    )
+)
+``` 
 
+```js
+// response
 console.log(result);
 {
       list: [
         {
           contract: '0x000000777697bdb425a417495743088dc664b10b',
-          description: 'CryptoBlobs are an animated digital collectible created 
-                        by SuperCollectiv that rewards collectors for deciding which ones 
-                        are rare using a unique soul-transferring system called Sacrificing. 
-                        Collect and harness souls to increase the rarity and value of your CryptoBlobs, 
-                        which also increases the floor price. Win up to $50,000 in prizes when you 
-                        purchase and sacrifice during the initial mint.',
+          description: 'CryptoBlobs are an animated digital collectible created by SuperCollectiv that rewards collectors for deciding which ones are rare using a unique soul-transferring system called Sacrificing. Collect and harness souls to increase the rarity and value of your CryptoBlobs, which also increases the floor price. Win up to $50,000 in prizes when you purchase and sacrifice during the initial mint.',
           externalurl: 'http://cryptoblobs.com',
           imageurl: 'https://i.seadn.io/gcs/files/0c3b99df3f62cc91891711477c5c7ed9.png?w=500&auto=format',
           name: 'CryptoBlobs.com | SuperCollectiv',
@@ -765,8 +827,7 @@ console.log(result);
           contract: '0x000000873ee8c0be5b00d4b16723519e728a7420',
           description: "MetaUnicorn is metaversion and unicorn, it's also the meta, the universe and the unicorn.",
           externalurl: '',
-          imageurl: 'https://i.seadn.io/gae/agYlnCjQU1-DYwSkn6JoHg1zZPBtD6HsMvbT83hIqN38YwQCKyS_Rj
-                    caWow0uj_2OhRM9HpAKviGKIeCRkVg5ZwU3uqr4bRV1G_-IQ?w=500&auto=format',
+          imageurl: 'https://i.seadn.io/gae/agYlnCjQU1-DYwSkn6JoHg1zZPBtD6HsMvbT83hIqN38YwQCKyS_RjcaWow0uj_2OhRM9HpAKviGKIeCRkVg5ZwU3uqr4bRV1G_-IQ?w=500&auto=format',
           name: 'Unicorn',
           network: 'ethereum',
           primaryInterface: 'erc_721',
@@ -791,14 +852,18 @@ console.log(result);
    - cursor: Address where the next cursor starts (optional)
 
 ```js
+// request
 import { getAddrByNft } from 'knn3-sdk';
 const result = await getAddrByNft(
       '0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85',
       'ethereum',
       3,
       '0x00000000000c480032486921e7ced20e4727f00e'
-    )
+)
+``` 
 
+```js
+// response
 console.log(result);
 {
       list: [
@@ -836,14 +901,18 @@ This category of interfaces is mainly for obtaining Token-related information (c
    - cursor: Address where the next cursor starts (optional)
 
 ```js
+// request
 import { getTokenList } from 'knn3-sdk';
 const result = await getTokenList(
       undefined,
       undefined,
       5,
       '0x000000777697bdb425a417495743088dc664b10b'
-    )
-    
+)
+``` 
+
+```js
+// response  
 console.log(result);
 {
       list: [
@@ -870,14 +939,18 @@ console.log(result);
    - cursor: Address where the next cursor starts (optional)
 
 ```js
+// request
 import { getAddrByToken } from 'knn3-sdk';
 const result = await getAddrByToken(
       '0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85',
       'ethereum',
       3,
       '0x00000000000c480032486921e7ced20e4727f00e'
-    )
-    
+)
+``` 
+
+```js
+// response  
 console.log(result);
 {
       list: [
@@ -915,9 +988,13 @@ This category of interfaces is mainly for obtaining Lens-related information.
    - cursor: Address where the next cursor starts (optional)
 
 ```js
+// request
 import { getLensList } from 'knn3-sdk';
 const result = await getLensList('shadow88sky.lens')
+``` 
 
+```js
+// response
 console.log(result);
 {
       list: [
@@ -945,9 +1022,13 @@ console.log(result);
    - cursor: Address where the next cursor starts (optional)
 
 ```js
+// request
 import { getLensFollowers } from 'knn3-sdk';
 const result = await getLensFollowers(104724)
+``` 
 
+```js
+// response
 console.log(result);
 {
       list: [
@@ -985,9 +1066,13 @@ console.log(result);
    - cursor: Address where the next cursor starts (optional)
 
 ```js
+// request
 import { getLensPublications } from 'knn3-sdk';
 result = await getLensPublications(104724, undefined, 'Mirror', 1, 1161695)
+``` 
 
+```js
+// response
 console.log(result);
 {
       list: [
@@ -1019,9 +1104,13 @@ console.log(result);
     - profileId: Lens profile ID(required)   
     
 ```js
+// request
 import { getLensRate } from 'knn3-sdk'; 
 result = await getLensRate(5)
+``` 
 
+```js
+// response
 console.log(result);
  {
       profileId: '5',
@@ -1056,12 +1145,16 @@ This category of interfaces is mainly for obtaining .bit related information.
    - cursor: Address where the next cursor starts (optional)
 
 ```js
+// request
 import { getBitList } from 'knn3-sdk';
 const result = await getBitList(
       undefined,
       '0xeab07120cdecc4a4ffaeddccd8cc508cd42702a1'
-    )
-    
+)
+``` 
+
+```js
+// response    
 console.log(result)
 {
       list: [
@@ -1088,9 +1181,13 @@ This category of interfaces is mainly for obtaining spaceId related information.
    - cursor: Address where the next cursor starts (optional)
 
 ```js
+// request
 import { getSpaceIdList } from 'knn3-sdk';
 const result = await getSpaceIdList(undefined, undefined, 10, '¥1000.bnb')
+``` 
 
+```js
+// response
 console.log(result)
 {
       list: [
@@ -1118,9 +1215,13 @@ This category of interfaces is mainly for obtaining Proposal related information
     * proposalId: proposal id(required)
 
 ```js
+// request
 import { getProposalInfo } from 'knn3-sdk'; 
 let result = await getProposalInfo('qmudr849bdq1b7klfjstseptkcmyv65dost2ry4phbms4j')
+``` 
 
+```js
+// response
 console.log(result)
 {
       spaceId: 'ladz.eth',
