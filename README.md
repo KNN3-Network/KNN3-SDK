@@ -37,6 +37,7 @@ npm i knn3-sdk
 6. sdk需要申请密钥并设置才能提高访问频率限制(默认为10次/每分钟)，设置密钥方法如下      
 
 ```js
+// set apikey
 import { setAuthKey } from 'knn3-sdk'
 setAuthKey('your-api-key')
 ```
