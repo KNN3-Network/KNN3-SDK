@@ -262,9 +262,13 @@ console.log(result);
       list: [
         {
           contract: '0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85',
-          description: 'Ethereum Name Service (ENS) domains are secure domain names for the decentralized world. ENS domains provide a way for users to map human readable names to blockchain and non-blockchain resources, like Ethereum addresses, IPFS hashes, or website URLs. ENS domains can be bought and sold on secondary markets.',
+          description: 'Ethereum Name Service (ENS) domains are secure domain names
+                        for the decentralized world. ENS domains provide a way for users to map human 
+                        readable names to blockchain and non-blockchain resources, like Ethereum addresses,
+                        IPFS hashes, or website URLs. ENS domains can be bought and sold on secondary markets.',
           externalurl: 'https://ens.domains',
-          imageurl: 'https://i.seadn.io/gae/0cOqWoYA7xL9CkUjGlxsjreSYBdrUBE0c6EO1COG4XE8UeP-Z30ckqUNiL872zHQHQU5MUNMNhfDpyXIP17hRSC5HQ?w=500&auto=format',
+          imageurl: 'https://i.seadn.io/gae/0cOqWoYA7xL9CkUjGlxsjreSYBdrUBE0c6EO1COG4XE8UeP-Z30
+                    ckqUNiL872zHQHQU5MUNMNhfDpyXIP17hRSC5HQ?w=500&auto=format',
           name: '',
           network: 'ethereum',
           primaryInterface: 'erc_721',
@@ -742,7 +746,12 @@ console.log(result);
       list: [
         {
           contract: '0x000000777697bdb425a417495743088dc664b10b',
-          description: 'CryptoBlobs are an animated digital collectible created by SuperCollectiv that rewards collectors for deciding which ones are rare using a unique soul-transferring system called Sacrificing. Collect and harness souls to increase the rarity and value of your CryptoBlobs, which also increases the floor price. Win up to $50,000 in prizes when you purchase and sacrifice during the initial mint.',
+          description: 'CryptoBlobs are an animated digital collectible created 
+                        by SuperCollectiv that rewards collectors for deciding which ones 
+                        are rare using a unique soul-transferring system called Sacrificing. 
+                        Collect and harness souls to increase the rarity and value of your CryptoBlobs, 
+                        which also increases the floor price. Win up to $50,000 in prizes when you 
+                        purchase and sacrifice during the initial mint.',
           externalurl: 'http://cryptoblobs.com',
           imageurl: 'https://i.seadn.io/gcs/files/0c3b99df3f62cc91891711477c5c7ed9.png?w=500&auto=format',
           name: 'CryptoBlobs.com | SuperCollectiv',
@@ -756,7 +765,8 @@ console.log(result);
           contract: '0x000000873ee8c0be5b00d4b16723519e728a7420',
           description: "MetaUnicorn is metaversion and unicorn, it's also the meta, the universe and the unicorn.",
           externalurl: '',
-          imageurl: 'https://i.seadn.io/gae/agYlnCjQU1-DYwSkn6JoHg1zZPBtD6HsMvbT83hIqN38YwQCKyS_RjcaWow0uj_2OhRM9HpAKviGKIeCRkVg5ZwU3uqr4bRV1G_-IQ?w=500&auto=format',
+          imageurl: 'https://i.seadn.io/gae/agYlnCjQU1-DYwSkn6JoHg1zZPBtD6HsMvbT83hIqN38YwQCKyS_Rj
+                    caWow0uj_2OhRM9HpAKviGKIeCRkVg5ZwU3uqr4bRV1G_-IQ?w=500&auto=format',
           name: 'Unicorn',
           network: 'ethereum',
           primaryInterface: 'erc_721',
