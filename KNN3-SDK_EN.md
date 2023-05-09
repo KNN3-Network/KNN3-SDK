@@ -423,12 +423,13 @@ console.log(result);
 ```
 
 10. Get address votes(snapshot)
-   Request parameters:
 
-   - address: Wallet address (required)
+    Request parameters:
+
+    - address: Wallet address (required)
    
-   - limit: Number of items per list, maximum 50 (optional)
-   - cursor: Address where the next cursor starts (optional)
+    - limit: Number of items per list, maximum 50 (optional)
+    - cursor: Address where the next cursor starts (optional)
 ```js
 // request
 import { votes } from 'knn3-sdk';
