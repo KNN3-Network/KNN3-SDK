@@ -45,7 +45,7 @@ setAuthKey('your-api-key')
 ## 申请密钥
 您可以选择以下任意一种方式申请密钥：
 1. 联系我们：builder@knn3.xyz
-2. 通过[Transformer](https://transformer.knn3.xyz/)平台申请(待正式发布)
+2. 通过[Transformer](https://transformer.knn3.xyz/)平台申请
    1. 连接钱包，并绑定邮箱
    2. 进入创建API Key界面创建，需要输入API Key用途
    3. 复制API Key，通过"setAuthKey"方法配置
