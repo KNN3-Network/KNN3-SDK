@@ -48,8 +48,10 @@ setAuthKey('your-api-key')
 You can choose any of the following methods to apply for an API key：
 1. Contact us：builder@knn3.xyz
 2. Apply from [Transformer](https://transformer.knn3.xyz/) platform
-3. Go to Create API Key page, enter API Key purpose
-4. Copy API Key, configure through "setAuthKey" method
+   1. Conncet wallet, bind email
+   2. Go to Create API Key page, enter API Key purpose
+   3. Copy API Key, configure through "setAuthKey" method
+ 
    
 ## Address
 
