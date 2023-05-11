@@ -4,6 +4,7 @@ import {
   getLensPublications,
   setAuthKey,
   getLensRate,
+  getLensRank,
 } from '../src/index'
 
 describe('test lens.ts', () => {
@@ -32,5 +33,10 @@ describe('test lens.ts', () => {
   it('should return correct lens rate', async () => {
     let result = await getLensRate(5)
     expect(result.profileId).toBe('5')
+  }, 50000)
+
+  it('should return correct lens rank', async () => {
+    let result = await getLensRank('engager')
+    expect(result.length).toBe(2000)
   }, 50000)
 })

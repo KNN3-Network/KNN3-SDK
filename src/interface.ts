@@ -1,7 +1,7 @@
 export interface IAddress {
-  address: string // 钱包地址
-  ens: string[] // ens数组
-  name: string // rss3里面的名字，暂时没用
+  address: string
+  ens: string[]
+  name: string
 }
 
 export interface IProposal {
@@ -121,7 +121,7 @@ export interface IAvatarList {
 }
 
 export interface ITwitterList {
-  list: IEvent[]
+  list: ITwitter[]
   cursor: string | null
 }
 
@@ -219,4 +219,9 @@ export interface ILensRate {
   overall_level_rank: number
   overall_level: number
   overall_level_str: string
+}
+
+export interface ILensRank {
+  rank: number
+  profileId: string
 }

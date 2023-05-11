@@ -1137,6 +1137,22 @@ console.log(result);
     }
 ```
 
+5. get lens Rank
+    * type: 'engager' | 'creator'| 'collector'| 'influ'| 'campaign'| 'curator'| 'overall' (required)
+```js
+import { getLensRank } from 'knn3-sdk'; 
+result = await getLensRank('engager')
+```
+
+```js
+// response
+console.log(result);
+ [{
+  rank: 1,
+  profileId: '1'
+ }]
+```
+
 ### bit
 
 This category of interfaces is mainly for obtaining .bit related information.

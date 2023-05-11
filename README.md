@@ -1037,6 +1037,22 @@ console.log(result);
     }
 ```
 
+5. 获取lens的Rank的前2000排名(7个维度)
+    * type: 'engager' | 'creator'| 'collector'| 'influ'| 'campaign'| 'curator'| 'overall' (必填)
+```js
+import { getLensRank } from 'knn3-sdk'; 
+result = await getLensRank('engager')
+```
+
+```js
+// response
+console.log(result);
+ [{
+  rank: 1,
+  profileId: '1'
+ }]
+```
+
 ### bit 
 该类接口主要获取.bit相关的信息
 1. 获取.bit的列表

@@ -1,4 +1,4 @@
-import { IAddrList, IBoundLens, ILensRate } from './interface'
+import { IAddrList, IBoundLens, ILensRank, ILensRate } from './interface'
 import { instance } from './request'
 
 export const getLensList = async (
@@ -59,4 +59,23 @@ export const getLensPublications = async (
 
 export const getLensRate = async (profileId: number): Promise<ILensRate> => {
   return (await instance.get(`/lens/level/${profileId}`)).data
+}
+
+export const getLensRank = async (
+  type:
+    | 'engager'
+    | 'creator'
+    | 'collector'
+    | 'influ'
+    | 'campaign'
+    | 'curator'
+    | 'overall'
+): Promise<ILensRank[]> => {
+  return (
+    await instance.get(`/lens/rank`, {
+      params: {
+        type,
+      },
+    })
+  ).data
 }
