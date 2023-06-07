@@ -997,22 +997,22 @@ result = await getLensRate(5)
       profileId: '5',
       address: '0x7241dddec3a6af367882eaf9651b87e1c7549dff',
       influ_level: 11,
-      influ_level_str: 'SS',
+      influ_level_str: 'SS',  // 正向评估，体现个人影响力
       campaign_level: 11,
-      campaign_level_str: 'SS',
+      campaign_level_str: 'SS',  // 正向评估，体现个人作品&话题热度
       engager_level: 10,
-      engager_level_str: 'S+',
+      engager_level_str: 'S+',  // 逆向评估，体现个人社群参与度
       creator_level: 11,
-      creator_level_str: 'SS',
+      creator_level_str: 'SS',   // 正向评估，体现个人作品价值
       collector_level: 10,
-      collector_level_str: 'S+',
+      collector_level_str: 'S+',  // 逆向评估，体现个人收藏实力
       curator_level: 11,
-      curator_level_str: 'SS',
+      curator_level_str: 'SS',   // 正向评估，体现个人策展效果
       overall_level_score: 64,
       overall_level_rank: 1,
       overall_level: 11,
-      overall_level_str: 'SS'
-    }
+      overall_level_str: 'SS'  // 总体评估
+ }
 ```
 
 5. 获取lens的Rank的前2000排名(7个维度)

@@ -1119,17 +1119,17 @@ result = await getLensRate(5)
       profileId: '5',
       address: '0x7241dddec3a6af367882eaf9651b87e1c7549dff',
       influ_level: 11,
-      influ_level_str: 'SS',
+      influ_level_str: 'SS',  // Get more followers, especially who has high Influence level
       campaign_level: 11,
-      campaign_level_str: 'SS',
+      campaign_level_str: 'SS', // Get more comments and mirrors by others, especially who has high Campaign level
       engager_level: 10,
-      engager_level_str: 'S+',
+      engager_level_str: 'S+',  // Give more comments and mirrors to others, especially who has high Engagement level
       creator_level: 11,
-      creator_level_str: 'SS',
+      creator_level_str: 'SS',  // Get more collects by others
       collector_level: 10,
-      collector_level_str: 'S+',
+      collector_level_str: 'S+',  // Collect more publications of others
       curator_level: 11,
-      curator_level_str: 'SS',
+      curator_level_str: 'SS',  // Improve the referral efficiency of your mirrors 
       overall_level_score: 64,
       overall_level_rank: 1,
       overall_level: 11,
