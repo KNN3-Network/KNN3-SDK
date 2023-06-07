@@ -2,7 +2,7 @@
 
 [中文](https://github.com/KNN3-Network/Graphx-SDK/blob/main/README.md) | [English](https://github.com/KNN3-Network/Graphx-SDK/blob/main/KNN3-SDK_EN.md)
 
-KNN3-SDK是一个开发者可以与KNN3 GraphX API直接交互的JavaScript SDK，在这个SDK里可以获得一下用户身份、行为凭证和关系数据。
+KNN3-SDK是一个开发者可以与KNN3 GraphX API直接交互的JavaScript SDK，在这个SDK里可以获得以下用户身份、行为凭证和关系数据。
 
 ## 内容目录
 
@@ -45,10 +45,11 @@ setAuthKey('your-api-key')
 ## 申请密钥
 您可以选择以下任意一种方式申请密钥：
 1. 联系我们：builder@knn3.xyz
-2. 通过[Transformer](https://transformer.knn3.xyz/)平台申请
-   1. 连接钱包，并绑定邮箱
-   2. 进入创建API Key界面创建，需要输入API Key用途
-   3. 复制API Key，通过"setAuthKey"方法配置
+2. 通过[K.Transformer](https://transformer.knn3.xyz/)平台申请   
+    i 选择钱包或者其他方式登录，并绑定邮箱    
+    ii 进入Account - Service Control- API Data Service创建API Key，需要输入API Key用途，选择服务类型Real-time Data Service - KNN3 API   
+    iii 复制API Key，通过"setAuthKey"方法配置
+
 
 ## Address   
 该类接口主要获取钱包地址及该地址的一些相关信息
@@ -64,7 +65,6 @@ const addr = await getAddr(address)
 
 ```js
 // response
-console.log(addr);
 {
   addr: '0x88520c10ad3d35ad2d3220cde446ccb33f09331b',
   ens: [ 'shadow88sky.eth' ],
@@ -88,7 +88,6 @@ const result = await getAddrList(undefined, 3)
 
 ```js
 // reponse
-console.log(result);
 {
   list: [
     {
@@ -136,14 +135,13 @@ const result = await attendEvents(
 
 ```js
 // response   
-console.log(result);
 {
   list: [
     {
       addr: '0x535824c63d3421c703cb022aba55c321a6e30bf4',
-      id: '48282',
-      name: 'banklessdao @ ethprague 2022',
-      imageUrl: 'https://s3.us-west-1.amazonaws.com/knn3-static-logo/48282.png'
+      id: '48282',  // event id
+      name: 'banklessdao @ ethprague 2022',   // event name 
+      imageUrl: 'https://s3.us-west-1.amazonaws.com/knn3-static-logo/48282.png'  // image url
     },
     {
       addr: '0x535824c63d3421c703cb022aba55c321a6e30bf4',
@@ -176,11 +174,10 @@ const result = await boundTwitter('0x035d1fa6e5967624f0cd424892994717ea9fc2d8')
 
 ```js
 // response
-console.log(result);
 {
   list: [
     {
-      uid: '988064388702650370',
+      uid: '988064388702650370',  
       handle: 'Downpink1',
       name: 'dowpink.eth'
     }
@@ -205,14 +202,13 @@ const result = await boundAvatars(
 
 ```js
 // response
-console.log(result);
 {
   list: [
     {
       id: 15702,
-      avatar: '0x02054a2cf487cb3687e12b3ec3d6e7f76bd5425f0b0ad6f32680aa615dba583397',
-      platform: 'ethereum',
-      identity: '0x790116d0685eb197b886dacad9c247f785987a4a',
+      avatar: '0x02054a2cf487cb3687e12b3ec3d6e7f76bd5425f0b0ad6f32680aa615dba583397',  // avatar id 
+      platform: 'ethereum',  // 平台
+      identity: '0x790116d0685eb197b886dacad9c247f785987a4a',  // ethereum: 代表地址
       created_at: '2022-12-16T10:23:47.466Z',
       updated_at: '2022-12-16T10:23:47.466Z'
     },
@@ -254,7 +250,6 @@ let result = await holdNfts(
 
 ```js
 // response
- console.log(result);
  {
       list: [
         {
@@ -292,7 +287,6 @@ let result = await holdTokens(
 
 ```js
 // response 
-console.log(result);
 {
       list: [
         {
@@ -301,7 +295,7 @@ console.log(result);
           symbol: 'BANK',
           decimal: '18',
           network: 'ethereum',
-          count: '1.3227938609411654162376e+22'
+          count: '1.3227938609411654162376e+22'  // 持有数量， 实际需要除以单位
         },
         {
           contract: '0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9',
@@ -341,7 +335,6 @@ const result = await boundBits(
 
 ```js
 // response
-console.log(result);
 {
       list: [
         {
@@ -372,7 +365,6 @@ const result = await boundSpaceIds(
 
 ```js
 // response
-console.log(result);
 {
       list: [
         {
@@ -397,13 +389,12 @@ const vote = await votes('0x724f321c4efed5e3c7cca40168610c258c82d02f')
 
 ```js
 // response
-console.log(vote);
 {
       list: [
         {
           address: '0x724f321c4efed5e3c7cca40168610c258c82d02f',
           spaceId: 'balancer.eth',
-          count: 3
+          count: 3  // 票数
         },
         {
           address: '0x724f321c4efed5e3c7cca40168610c258c82d02f',
@@ -434,7 +425,7 @@ const result = await isVote(
 );
 
 // response
-console.log(result) => true
+true
 ```
 
 ### Event       
@@ -450,11 +441,10 @@ const event = await getEvent('1')
 
 ```js
 // response
-console.log(event);
 {
       id: '1',
       imageUrl: 'https://s3.us-west-1.amazonaws.com/knn3-static-logo/1.png',
-      name: 'dappcon'
+      name: 'dappcon'  // event name
 }
 ```     
 
@@ -473,7 +463,6 @@ const result = await getEventList('eth')
 
 ```js
 // response
-console.log(result);
 {
      list: [
         {
@@ -511,7 +500,6 @@ const result = await getEventAddr('10203');
 
 ```js
 // response
-console.log(result);
 {
      list: [
         {
@@ -552,7 +540,6 @@ const result = await getTwitterList('chen');
 
 ```js
 // response
-console.log(result);
 {
      list: [
         {
@@ -590,7 +577,6 @@ const result = await  getTwitterIncludeAddr('988064388702650370');
 
 ```js
 // response
-console.log(result);
 {
       list: [
         {
@@ -624,7 +610,6 @@ let result = await getAvatarList(
 
 ```js
 // response
-console.log(result);
 {
       list: [
         {
@@ -671,7 +656,6 @@ const result = await getAvatarBindAddr(
 
 ```js
 // response
-console.log(result);
 {
       list: [
          {
@@ -699,7 +683,6 @@ const result = await getAvatarBindTwitter(
 
 ```js
 // response
-console.log(result);
 {
       list: [
          {
@@ -734,13 +717,11 @@ const result = await getNftList(
 
 ```js
 // response
-console.log(result);
 {
       list: [
         {
-          contract: '0x000000777697bdb425a417495743088dc664b10b',
-          description: 'CryptoBlobs are an animated digital collectible created by SuperCollectiv that rewards collectors for deciding which ones are rare using a unique soul-transferring system called Sacrificing. Collect and harness souls to increase the rarity and value of your CryptoBlobs, which also increases the floor price. Win up to $50,000 in prizes when you purchase and 
-sacrifice during the initial mint.',
+          contract: '0x000000777697bdb425a417495743088dc664b10b',  // 合约地址
+          description: 'CryptoBlobs are an animated digital collectible created by SuperCollectiv that rewards collectors for deciding which ones are rare using a unique soul-transferring system called Sacrificing. Collect and harness souls to increase the rarity and value of your CryptoBlobs, which also increases the floor price. Win up to $50,000 in prizes when you purchase and sacrifice during the initial mint.',
           externalurl: 'http://cryptoblobs.com',
           imageurl: 'https://i.seadn.io/gcs/files/0c3b99df3f62cc91891711477c5c7ed9.png?w=500&auto=format',
           name: 'CryptoBlobs.com | SuperCollectiv',
@@ -787,7 +768,6 @@ const result = await getAddrByNft(
 
 ```js
 // response  
-console.log(result);
 {
       list: [
         {
@@ -835,7 +815,6 @@ const result = await getTokenList(
 
 ```js
 // response
-console.log(result);
 {
       list: [
         {
@@ -869,7 +848,6 @@ const result = await getAddrByToken(
 
 ```js
 // response
-console.log(result);
 {
       list: [
          {
@@ -910,7 +888,7 @@ const result = await getLensList('shadow88sky.lens')
 
 ```js
 // response
-console.log(result);
+
 {
       list: [
         {
@@ -941,7 +919,7 @@ const result = await getLensFollowers(104724)
 
 ```js
 // response
-console.log(result);
+
 {
       list: [
         {
@@ -979,7 +957,7 @@ result = await getLensPublications(104724, undefined, 'Mirror', 1, 1161695);
 
 ```js
 // response
-console.log(result);
+
 {
       list: [
         {
@@ -1014,7 +992,7 @@ result = await getLensRate(5)
 
 ```js
 // response
-console.log(result);
+
  {
       profileId: '5',
       address: '0x7241dddec3a6af367882eaf9651b87e1c7549dff',
@@ -1046,7 +1024,7 @@ result = await getLensRank('engager')
 
 ```js
 // response
-console.log(result);
+
  [{
   rank: 1,
   profileId: '1'
@@ -1072,7 +1050,7 @@ const result = await getBitList(
 
 ```js
 // response
-console.log(result)
+
 {
       list: [
         {
@@ -1103,7 +1081,7 @@ const result = await getSpaceIdList(undefined, undefined, 10, '¥1000.bnb');
 
 ```js
 // response
-console.log(result)
+
 {
       list: [
          {
@@ -1136,7 +1114,7 @@ let result = await getProposalInfo('qmudr849bdq1b7klfjstseptkcmyv65dost2ry4phbms
 
 ```js
 // response
-console.log(result)
+
 {
       spaceId: 'ladz.eth',
       proposalId: 'QmUdr849BDQ1B7kLfJsTSePTkcmyV65DoST2ry4PhbmS4J',

@@ -45,12 +45,12 @@ setAuthKey('your-api-key')
 ```
 
 ## Apply for API Key
-You can choose any of the following methods to apply for an API key：
+You can choose any of the following methods to apply for an API key：   
 1. Contact us：builder@knn3.xyz
-2. Apply from [Transformer](https://transformer.knn3.xyz/) platform
-   1. Connect wallet, bind email
-   2. Go to Create API Key page, enter API Key purpose
-   3. Copy API Key, configure through "setAuthKey" method
+2. Apply from [K.Transformer](https://transformer.knn3.xyz/) platform    
+    i Connect wallet or other authorization method, bind email  
+    ii Go to Account - Service Control- API Data Service to create API Key, enter API Key purpose, select service Real-time Data Service - KNN3 API  
+    iii Copy API Key, configure through "setAuthKey" method
  
    
 ## Address
@@ -95,7 +95,7 @@ const result = await getAddrList()
 
 ```js
 // response
-console.log(result);
+;
 {
   list: [
     {
@@ -149,7 +149,7 @@ const result = await attendEvents(
 
 ```js
 // response
-console.log(result);
+;
 {
   list: [
     {
@@ -193,7 +193,7 @@ const result = await boundTwitter('0x035d1fa6e5967624f0cd424892994717ea9fc2d8')
 
 ```js
 // response
-console.log(result);
+;
 {
   list: [
     {
@@ -226,7 +226,7 @@ const result = await boundAvatars(
 
 ```js
 // response
-console.log(result);
+;
 {
   list: [
     {
@@ -280,7 +280,7 @@ let result = await holdNfts(
 
 ```js
 // response
-console.log(result);
+;
  {
       list: [
         {
@@ -324,7 +324,7 @@ let result = await holdTokens(
 
 ```js
 // response
-console.log(result);
+;
 {
       list: [
         {
@@ -377,7 +377,7 @@ const result = await boundBits(
 
 ```js
 // response
-console.log(result);
+;
 {
       list: [
         {
@@ -411,7 +411,7 @@ const result = await boundSpaceIds(
 
 ```js
 // response  
-console.log(result);
+;
 {
       list: [
         {
@@ -476,7 +476,7 @@ const result = await isVote(
 );
 
 // response
-console.log(result) => true
+ => true
 ```
 
 ### Event
@@ -521,7 +521,7 @@ const result = await getEventList('eth')
 
 ```js
 // response
-console.log(result);
+;
 {
      list: [
         {
@@ -564,7 +564,7 @@ const result = await getEventAddr('10203')
 
 ```js
 // response
-console.log(result);
+;
 {
      list: [
         {
@@ -608,7 +608,7 @@ const result = await getTwitterList('chen')
 
 ```js
 // response
-console.log(result);
+;
 {
      list: [
         {
@@ -652,7 +652,7 @@ const result = await  getTwitterIncludeAddr('988064388702650370')
 
 ```js
 // response
-console.log(result);
+;
 {
       list: [
         {
@@ -689,7 +689,7 @@ await getAvatarList(
 
 ```js
 // response
-console.log(result);
+;
 {
       list: [
         {
@@ -742,7 +742,7 @@ const result = await getAvatarBindAddr(
 
 ```js
 // response
-console.log(result);
+;
 {
       list: [
          {
@@ -775,7 +775,7 @@ const result = await getAvatarBindTwitter(
 
 ```js
 // response   
-console.log(result);
+;
 {
       list: [
          {
@@ -811,7 +811,7 @@ const result = await getNftList(
 
 ```js
 // response
-console.log(result);
+;
 {
       list: [
         {
@@ -867,7 +867,7 @@ const result = await getAddrByNft(
 
 ```js
 // response
-console.log(result);
+;
 {
       list: [
         {
@@ -916,7 +916,7 @@ const result = await getTokenList(
 
 ```js
 // response  
-console.log(result);
+;
 {
       list: [
         {
@@ -954,7 +954,7 @@ const result = await getAddrByToken(
 
 ```js
 // response  
-console.log(result);
+;
 {
       list: [
          {
@@ -998,7 +998,7 @@ const result = await getLensList('shadow88sky.lens')
 
 ```js
 // response
-console.log(result);
+;
 {
       list: [
         {
@@ -1032,7 +1032,7 @@ const result = await getLensFollowers(104724)
 
 ```js
 // response
-console.log(result);
+;
 {
       list: [
         {
@@ -1076,7 +1076,7 @@ result = await getLensPublications(104724, undefined, 'Mirror', 1, 1161695)
 
 ```js
 // response
-console.log(result);
+;
 {
       list: [
         {
@@ -1114,7 +1114,7 @@ result = await getLensRate(5)
 
 ```js
 // response
-console.log(result);
+;
  {
       profileId: '5',
       address: '0x7241dddec3a6af367882eaf9651b87e1c7549dff',
@@ -1146,7 +1146,7 @@ result = await getLensRank('engager')
 
 ```js
 // response
-console.log(result);
+;
  [{
   rank: 1,
   profileId: '1'
@@ -1174,7 +1174,7 @@ const result = await getBitList(
 
 ```js
 // response    
-console.log(result)
+
 {
       list: [
         {
@@ -1207,7 +1207,7 @@ const result = await getSpaceIdList(undefined, undefined, 10, '¥1000.bnb')
 
 ```js
 // response
-console.log(result)
+
 {
       list: [
          {
@@ -1241,7 +1241,7 @@ let result = await getProposalInfo('qmudr849bdq1b7klfjstseptkcmyv65dost2ry4phbms
 
 ```js
 // response
-console.log(result)
+
 {
       spaceId: 'ladz.eth',
       proposalId: 'QmUdr849BDQ1B7kLfJsTSePTkcmyV65DoST2ry4PhbmS4J',
