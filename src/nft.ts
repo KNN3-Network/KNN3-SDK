@@ -20,19 +20,3 @@ export const getNftList = async (
   ).data
 }
 
-export const getAddrByNft = async (
-  contract: string,
-  network: 'ethereum' | 'polygon',
-  limit?: number,
-  cursor?: string
-): Promise<IAddrHoldCountList> => {
-  if (limit && limit > 50) limit = 50
-  return (
-    await instance.get(`nfts/${contract}/${network}/addressList`, {
-      params: {
-        limit,
-        cursor,
-      },
-    })
-  ).data
-}

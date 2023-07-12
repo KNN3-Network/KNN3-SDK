@@ -27,7 +27,7 @@ describe('test lens.ts', () => {
     let result = await getLensPublications()
     expect(result.list.length).toBe(30)
     result = await getLensPublications(104724, undefined, 'Mirror', 1, 1161695)
-    expect(result.list[0].id).toBe(1161695)
+    expect(result.list[0].profileId).toBe(104724)
   }, 50000)
 
   it('should return correct lens rate', async () => {
@@ -36,7 +36,7 @@ describe('test lens.ts', () => {
   }, 50000)
 
   it('should return correct lens rank', async () => {
-    let result = await getLensRank('engager')
+    let result = await getLensRank()
     expect(result.length).toBe(2000)
   }, 50000)
 })

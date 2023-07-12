@@ -61,21 +61,8 @@ export const getLensRate = async (profileId: number): Promise<ILensRate> => {
   return (await instance.get(`/lens/level/${profileId}`)).data
 }
 
-export const getLensRank = async (
-  type:
-    | 'engager'
-    | 'creator'
-    | 'collector'
-    | 'influ'
-    | 'campaign'
-    | 'curator'
-    | 'overall'
-): Promise<ILensRank[]> => {
+export const getLensRank = async (): Promise<ILensRank[]> => {
   return (
-    await instance.get(`/lens/rank`, {
-      params: {
-        type,
-      },
-    })
+    await instance.get(`/lens/rank`)
   ).data
 }

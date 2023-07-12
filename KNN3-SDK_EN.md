@@ -844,55 +844,6 @@ const result = await getNftList(
 }
 ```
 
-2. Get the address holding a certain type of NFT
-
-   - contract: Contract address (required)
-
-   - network: 'ethereum' or 'polygon' (required)
-
-   - limit: Number of items per list, maximum 50 (optional)
-
-   - cursor: Address where the next cursor starts (optional)
-
-```js
-// request
-import { getAddrByNft } from 'knn3-sdk';
-const result = await getAddrByNft(
-      '0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85',
-      'ethereum',
-      3,
-      '0x00000000000c480032486921e7ced20e4727f00e'
-)
-``` 
-
-```js
-// response
-;
-{
-      list: [
-        {
-          count: '1',
-          addr: '0x00000000000c480032486921e7ced20e4727f00e',
-          ens: [],
-          name: null
-        },
-        {
-          count: '1',
-          addr: '0x00000000000d3b4ea88f9b3fe809d386b86f5898',
-          ens: [],
-          name: null
-        },
-        {
-          count: '1',
-          addr: '0x00000000000e706907b1cf44d7e819f7e7ae20dd',
-          ens: [],
-          name: null
-        }
-      ],
-      cursor: '0x00000000001fdf764ecee7a545a292f7cc621e80'
- }
-```
-
 ### Token
 
 This category of interfaces is mainly for obtaining Token-related information (currently supports ETH and Polygon).
@@ -928,55 +879,6 @@ const result = await getTokenList(
         }
       ],
       cursor: 'null'
- }
-```
-
-2. Get the address holding a certain type of Token
-
-   - contract: Contract address (required)
-
-   - network: 'ethereum' or 'polygon' (required)
-
-   - limit: Number of items per list, maximum 50 (optional)
-
-   - cursor: Address where the next cursor starts (optional)
-
-```js
-// request
-import { getAddrByToken } from 'knn3-sdk';
-const result = await getAddrByToken(
-      '0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85',
-      'ethereum',
-      3,
-      '0x00000000000c480032486921e7ced20e4727f00e'
-)
-``` 
-
-```js
-// response  
-;
-{
-      list: [
-         {
-          count: '607600',
-          addr: '0x0000000000000000000000000000000000000006',
-          ens: [],
-          name: null
-        },
-        {
-          count: '1000000',
-          addr: '0x000000000000000000000000000000000000000a',
-          ens: [],
-          name: null
-        },
-        {
-          count: '205800',
-          addr: '0x000000000000000000000000000000000000000d',
-          ens: [],
-          name: null
-        }
-      ],
-      cursor: '0x00000000000000000000000000000000000000ed'
  }
 ```
 
