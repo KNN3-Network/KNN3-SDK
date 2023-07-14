@@ -4,6 +4,7 @@ import {
   IAddrList,
   IBitList,
   IBoundAvatars,
+  IBoundHashkeys,
   IBoundLens,
   IBoundSpaceIds,
   IBoundTwitters,
@@ -152,6 +153,23 @@ export const boundLens = async (
   if (limit && limit > 50) limit = 50
   return (
     await instance.get(`addresses/boundLens`, {
+      params: {
+        address: address.toLocaleLowerCase(),
+        limit,
+        cursor,
+      },
+    })
+  ).data
+}
+
+export const boundHashkeys = async (
+  address: string,
+  limit?: number,
+  cursor?: string
+): Promise<IBoundHashkeys> => {
+  if (limit && limit > 50) limit = 50
+  return (
+    await instance.get(`addresses/boundHashkeys`, {
       params: {
         address: address.toLocaleLowerCase(),
         limit,

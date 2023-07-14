@@ -52,6 +52,21 @@ export interface ILens {
   address: string
 }
 
+export interface IHashkey{
+  chain:number
+  tx_hash:string
+  log_index:string
+  block_number:number
+  tx_index:number
+  owner:string
+  contract:string
+  token_id:string
+  uri:string
+  name:string
+  did:string
+  avatar:string
+}
+
 export interface IToken {
   contract: string
   name: string
@@ -130,6 +145,11 @@ export interface IBitList {
   cursor: string | null
 }
 
+export interface IHashkeyList {
+  list: IHashkey[]
+  cursor: string | null
+}
+
 export interface IAddrAttendEventsList {
   list: IEvent[]
   cursor: string | null
@@ -142,6 +162,11 @@ export interface IBoundTwitters {
 
 export interface IBoundAvatars {
   list: IAvatar[]
+  cursor: string | null
+}
+
+export interface IBoundHashkeys {
+  list: IHashkey[]
   cursor: string | null
 }
 

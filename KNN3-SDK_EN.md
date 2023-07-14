@@ -21,6 +21,7 @@ KNN3-SDK is a JavaScript SDK with which developers can directly interact with KN
   - [bit](#bit)
   - [spaceId](#spaceid)
   - [Proposal](#proposal)
+  - [Hashkey](#hashkey)
 - [License](#license)
 
 ## Install
@@ -477,6 +478,47 @@ const result = await isVote(
 
 // response
  => true
+```
+
+12. Get address-bound hashkey
+
+   Request parameters:
+
+   - address: Wallet address (required)
+
+   - limit: Number of items per list, maximum 50 (optional)
+
+   - cursor: Address where the next cursor starts (optional)    
+
+```js
+// request
+import { boundHashkeys } from 'knn3-sdk';
+const result = await boundHashkeys(
+      '0x88520C10ad3d35aD2D3220CdE446CcB33f09331B'
+)
+```
+
+```js
+// response
+{
+      list: [
+        {
+          chain: '137',
+          tx_hash: '0x0x39cf7e9f9e983e615c9df4d1cfad059528109e72fe7f526b122967ec66519560',
+          log_index: '217',
+          block_number: '41661746',
+          tx_index: '56',
+          owner: '0x88520C10ad3d35aD2D3220CdE446CcB33f09331B',
+          contract: '0x7fDd3f96cBDE51737A9E24b461E7E92A057C3BBf',
+          token_id: '43288774018209114666072661109206283848131676493678691273260165003966608687089',
+          uri: 'https://api.hashkey.id/did/api/nft/metadata/43288774018209114666072661109206283848131676493678691273260165003966608687089',
+          name: 'shadow88sky.key',
+          did: 'shadow88sky',
+          avatar: 'https://api.hashkey.id/did/api/file/avatar_8c767722-7d98-4c4c-b0c9-05dda43dda9e.png'
+        }
+      ],
+      cursor: null
+}
 ```
 
 ### Event
@@ -1089,6 +1131,45 @@ const result = await getBitList(
       ],
       cursor: null
 }
+```
+
+### hashkey
+
+This category of interfaces is mainly for obtaining hashkey related information.
+
+1. Get the did list
+   - did: hashkey did (optional)
+   - addr: Address (optional)
+   - limit: Number of items per list, maximum 50 (optional)
+   - cursor: Address where the next cursor starts (optional)    
+
+```js
+// request
+import { getHashkeyList } from 'knn3-sdk'; 
+const result = await getHashkeyList('shadow88sky',undefined,2)
+```
+
+```js
+// response
+{
+      list: [
+        {
+          chain: '137',
+          tx_hash: '0x0x39cf7e9f9e983e615c9df4d1cfad059528109e72fe7f526b122967ec66519560',
+          log_index: '217',
+          block_number: '41661746',
+          tx_index: '56',
+          owner: '0x88520C10ad3d35aD2D3220CdE446CcB33f09331B',
+          contract: '0x7fDd3f96cBDE51737A9E24b461E7E92A057C3BBf',
+          token_id: '43288774018209114666072661109206283848131676493678691273260165003966608687089',
+          uri: 'https://api.hashkey.id/did/api/nft/metadata/43288774018209114666072661109206283848131676493678691273260165003966608687089',
+          name: 'shadow88sky.key',
+          did: 'shadow88sky',
+          avatar: 'https://api.hashkey.id/did/api/file/avatar_8c767722-7d98-4c4c-b0c9-05dda43dda9e.png'
+        }
+      ],
+      cursor: null
+    }
 ```
 
 ### spaceId

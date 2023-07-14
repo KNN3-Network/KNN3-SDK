@@ -19,6 +19,7 @@ KNN3-SDK是一个开发者可以与KNN3 GraphX API直接交互的JavaScript SDK�
   - [Token](#token)
   - [Lens](#lens)
   - [bit](#bit)
+  - [hashkey](#hashkey)
   - [spaceId](#spaceid)
   - [Proposal](#proposal)
 - [License](#license)
@@ -426,6 +427,43 @@ const result = await isVote(
 
 // response
 true
+```
+
+11. 获取地址绑定的hashkey
+请求参数:       
+    * address: 钱包地址(必选)     
+    * limit: 每次列表的条数，最大50(可选)
+    * cursor: 下个游标开始的地址(可选)  
+
+```js
+// request
+import { boundHashkeys } from 'knn3-sdk';
+const result = await boundHashkeys(
+      '0x88520C10ad3d35aD2D3220CdE446CcB33f09331B'
+)
+```
+
+```js
+// response
+{
+      list: [
+        {
+          chain: '137',
+          tx_hash: '0x0x39cf7e9f9e983e615c9df4d1cfad059528109e72fe7f526b122967ec66519560',
+          log_index: '217',
+          block_number: '41661746',
+          tx_index: '56',
+          owner: '0x88520C10ad3d35aD2D3220CdE446CcB33f09331B',
+          contract: '0x7fDd3f96cBDE51737A9E24b461E7E92A057C3BBf',
+          token_id: '43288774018209114666072661109206283848131676493678691273260165003966608687089',
+          uri: 'https://api.hashkey.id/did/api/nft/metadata/43288774018209114666072661109206283848131676493678691273260165003966608687089',
+          name: 'shadow88sky.key',
+          did: 'shadow88sky',
+          avatar: 'https://api.hashkey.id/did/api/file/avatar_8c767722-7d98-4c4c-b0c9-05dda43dda9e.png'
+        }
+      ],
+      cursor: null
+}
 ```
 
 ### Event       
@@ -975,6 +1013,43 @@ const result = await getBitList(
       ],
       cursor: null
 }
+```
+
+### hashkey
+该类接口主要获取hashkey相关的信息
+1. 获取hashkey的列表
+    * did: hashkey的did(可选) 
+    * addr: 地址(可选)
+    * limit: 每次列表的条数，最大50(可选)
+    * cursor: 下个游标开始的地址(可选)      
+
+```js
+// request
+import { getHashkeyList } from 'knn3-sdk'; 
+const result = await getHashkeyList('shadow88sky',undefined,2)
+```
+
+```js
+// response
+{
+      list: [
+        {
+          chain: '137',
+          tx_hash: '0x0x39cf7e9f9e983e615c9df4d1cfad059528109e72fe7f526b122967ec66519560',
+          log_index: '217',
+          block_number: '41661746',
+          tx_index: '56',
+          owner: '0x88520C10ad3d35aD2D3220CdE446CcB33f09331B',
+          contract: '0x7fDd3f96cBDE51737A9E24b461E7E92A057C3BBf',
+          token_id: '43288774018209114666072661109206283848131676493678691273260165003966608687089',
+          uri: 'https://api.hashkey.id/did/api/nft/metadata/43288774018209114666072661109206283848131676493678691273260165003966608687089',
+          name: 'shadow88sky.key',
+          did: 'shadow88sky',
+          avatar: 'https://api.hashkey.id/did/api/file/avatar_8c767722-7d98-4c4c-b0c9-05dda43dda9e.png'
+        }
+      ],
+      cursor: null
+    }
 ```
 
 ### spaceId 
