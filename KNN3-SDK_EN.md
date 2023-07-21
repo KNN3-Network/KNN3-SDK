@@ -1095,6 +1095,140 @@ result = await getLensRank('engager')
   rank: 1,
   profileId: '1'
  }]
+```  
+
+6. get revenue by address   
+    * address: address(required)   
+    * type: 'total' | 'orgin' | 'referral' | 'split' (optional)   
+    * timeStart: start time(optional)
+    * timeEnd: end time (optional)   
+  
+```js
+const result = await getLensRevenueByAddress('0x329c54289ff5d6b7b7dae13592c6b1eda1543ed4')
+```   
+response:   
+
+```json  
+[
+      {
+        _sum: { receiver_amount: '333.517' },
+        currency: '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270',
+        receiver: '0x329c54289ff5d6b7b7dae13592c6b1eda1543ed4'
+      },
+      {
+        _sum: { receiver_amount: '114.2' },
+        currency: '0x2791bca1f2de4661ed88a30c99a7a9449aa84174',
+        receiver: '0x329c54289ff5d6b7b7dae13592c6b1eda1543ed4'
+      }
+]
+```
+
+7. get revenue by single mirro  
+    * profileId: lens profileId(required)   
+    * pubId: lens的pubId(required)
+    * timeStart: start time(optional)
+    * timeEnd: end time(optional)   
+  
+```js
+const result = await await getLensRevenueByMirror(70906, 192)
+```   
+response:   
+
+```json  
+[
+      {
+        total: '1',
+        currency: '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270',
+        pro_id: 70906,
+        pub_id: 192
+      }
+]
+```
+
+8. get revenue by single post/comment  
+    * profileId: lens profileId(required)   
+    * pubId: lens的pubId(required)
+    * timeStart: start time(optional)
+    * timeEnd: end time(optional)   
+  
+```js
+const result = await await getLensRevenueByPub(70906, 192)
+```   
+response:   
+
+```json  
+[
+      {
+        total: '1',
+        currency: '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270',
+        root_pro_id: 70906,
+        root_pub_id: 192
+      }
+]
+```
+
+9. get revenue by single pub by day
+    * profileId: lens profileId(required)   
+    * pubId: lens的pubId(required)
+    * timeStart: start time(optional)
+    * timeEnd: end time(optional)   
+  
+```js
+const result = await await getLensRevenueByPubByDay(18265, 2)
+```   
+response:   
+
+```json  
+[
+      {
+        day: '2022-06-04',
+        receiver_amount: '0.03',
+        currency: '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270',
+        root_pro_id: 18265,
+        root_pub_id: 2
+      }
+]
+```
+
+10. get revenue tendency by address
+    * address: address(required)   
+    * timeStart: start time(optional)
+    * timeEnd: end time(optional)   
+  
+```js
+const result = await await getLensRevenueTendencyByAddress('0xc67e0e424952d614d6c96baf543ddd6f6694a977')
+```   
+response:   
+
+```json  
+[
+      {
+        day: '2022-06-04',
+        receiver_amount: '0.03',
+        currency: '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270',
+        receiver: '0xc67e0e424952d614d6c96baf543ddd6f6694a977'
+      }
+]
+```
+
+11. top10 collectors for address
+    * address: address(required)   
+    * timeStart: start time(optional)
+    * timeEnd: end time(optional)    
+  
+```js
+const result = await await getLensRevenueTop10CollectorsByAddress('0xc67e0e424952d614d6c96baf543ddd6f6694a977')
+```   
+response:   
+
+```json  
+ [
+      {
+        total: '0.03',
+        collector: '0xc67e0e424952d614d6c96baf543ddd6f6694a977',
+        time: 1654362658
+      }
+]
 ```
 
 ### bit

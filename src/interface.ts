@@ -52,19 +52,19 @@ export interface ILens {
   address: string
 }
 
-export interface IHashkey{
-  chain:number
-  tx_hash:string
-  log_index:string
-  block_number:number
-  tx_index:number
-  owner:string
-  contract:string
-  token_id:string
-  uri:string
-  name:string
-  did:string
-  avatar:string
+export interface IHashkey {
+  chain: number
+  tx_hash: string
+  log_index: string
+  block_number: number
+  tx_index: number
+  owner: string
+  contract: string
+  token_id: string
+  uri: string
+  name: string
+  did: string
+  avatar: string
 }
 
 export interface IToken {
@@ -249,4 +249,45 @@ export interface ILensRate {
 export interface ILensRank {
   rank: number
   profileId: string
+}
+
+export interface ILensRevenueByAddress {
+  _sum: { receiver_amount: string }
+  currency: string
+  receiver: string
+}
+
+export interface ILensRevenueByMirror {
+  total: string
+  currency: string
+  pro_id: number
+  pub_id: number
+}
+
+export interface ILensRevenueByPub {
+  total: string
+  currency: string
+  root_pro_id: number
+  root_pub_id: number
+}
+
+export interface ILensRevenueByPubByDay {
+  day: Date
+  receiver_amount: string
+  currency: string
+  root_pro_id: number
+  root_pub_id: number
+}
+
+export interface ILensRevenueTendencyByAddress {
+  day: string
+  receiver_amount: string
+  currency: string
+  receiver: string
+}
+
+export interface ILensRevenueTop10CollectorsByAddress {
+  total: string
+  collector: string
+  time: number
 }

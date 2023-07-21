@@ -981,6 +981,140 @@ result = await getLensRank('engager')
  }]
 ```
 
+6. 根据地址获取revenue    
+    * address: 钱包地址(必选)   
+    * type: 'total' | 'orgin' | 'referral' | 'split' (可选)   
+    * timeStart: 开始时间(可选)
+    * timeEnd: 结束时间(可选)   
+  
+```js
+const result = await getLensRevenueByAddress('0x329c54289ff5d6b7b7dae13592c6b1eda1543ed4')
+```   
+返回值:   
+
+```json  
+[
+      {
+        _sum: { receiver_amount: '333.517' },
+        currency: '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270',
+        receiver: '0x329c54289ff5d6b7b7dae13592c6b1eda1543ed4'
+      },
+      {
+        _sum: { receiver_amount: '114.2' },
+        currency: '0x2791bca1f2de4661ed88a30c99a7a9449aa84174',
+        receiver: '0x329c54289ff5d6b7b7dae13592c6b1eda1543ed4'
+      }
+]
+```
+
+7. 单条mirror的revenue   
+    * profileId: lens的profileId(必填)   
+    * pubId: lens的pubId(必填)
+    * timeStart: 开始时间(可选)
+    * timeEnd: 结束时间(可选)   
+  
+```js
+const result = await await getLensRevenueByMirror(70906, 192)
+```   
+返回值:   
+
+```json  
+[
+      {
+        total: '1',
+        currency: '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270',
+        pro_id: 70906,
+        pub_id: 192
+      }
+]
+```
+
+8. 单条post/comment的revenue   
+    * profileId: lens的profileId(必填)   
+    * pubId: lens的pubId(必填)
+    * timeStart: 开始时间(可选)
+    * timeEnd: 结束时间(可选)   
+  
+```js
+const result = await await getLensRevenueByPub(70906, 192)
+```   
+返回值:   
+
+```json  
+[
+      {
+        total: '1',
+        currency: '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270',
+        root_pro_id: 70906,
+        root_pub_id: 192
+      }
+]
+```
+
+9. 单条pub每日的revenue   
+    * profileId: lens的profileId(必填)   
+    * pubId: lens的pubId(必填)
+    * timeStart: 开始时间(可选)
+    * timeEnd: 结束时间(可选)   
+  
+```js
+const result = await await getLensRevenueByPubByDay(18265, 2)
+```   
+返回值:   
+
+```json  
+[
+      {
+        day: '2022-06-04',
+        receiver_amount: '0.03',
+        currency: '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270',
+        root_pro_id: 18265,
+        root_pub_id: 2
+      }
+]
+```
+
+10. 每日的revenue的单个地址趋势
+    * address: address(必填)   
+    * timeStart: 开始时间(可选)
+    * timeEnd: 结束时间(可选)   
+  
+```js
+const result = await await getLensRevenueTendencyByAddress('0xc67e0e424952d614d6c96baf543ddd6f6694a977')
+```   
+返回值:   
+
+```json  
+[
+      {
+        day: '2022-06-04',
+        receiver_amount: '0.03',
+        currency: '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270',
+        receiver: '0xc67e0e424952d614d6c96baf543ddd6f6694a977'
+      }
+]
+```
+
+11. top10 collectors for address
+    * address: address(必填)   
+    * timeStart: 开始时间(可选)
+    * timeEnd: 结束时间(可选)   
+  
+```js
+const result = await await getLensRevenueTop10CollectorsByAddress('0xc67e0e424952d614d6c96baf543ddd6f6694a977')
+```   
+返回值:   
+
+```json  
+ [
+      {
+        total: '0.03',
+        collector: '0xc67e0e424952d614d6c96baf543ddd6f6694a977',
+        time: 1654362658
+      }
+]
+```
+
 ### bit 
 该类接口主要获取.bit相关的信息
 1. 获取.bit的列表
